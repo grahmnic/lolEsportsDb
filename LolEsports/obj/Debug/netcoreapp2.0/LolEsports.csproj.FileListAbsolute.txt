@@ -1,0 +1,10 @@
+C:\Users\nick-\source\repos\LolEsports\LolEsports\bin\Debug\netcoreapp2.0\LolEsports.deps.json
+C:\Users\nick-\source\repos\LolEsports\LolEsports\bin\Debug\netcoreapp2.0\LolEsports.runtimeconfig.json
+C:\Users\nick-\source\repos\LolEsports\LolEsports\bin\Debug\netcoreapp2.0\LolEsports.runtimeconfig.dev.json
+C:\Users\nick-\source\repos\LolEsports\LolEsports\bin\Debug\netcoreapp2.0\LolEsports.dll
+C:\Users\nick-\source\repos\LolEsports\LolEsports\bin\Debug\netcoreapp2.0\LolEsports.pdb
+C:\Users\nick-\source\repos\LolEsports\LolEsports\obj\Debug\netcoreapp2.0\LolEsports.csproj.CoreCompileInputs.cache
+C:\Users\nick-\source\repos\LolEsports\LolEsports\obj\Debug\netcoreapp2.0\LolEsports.AssemblyInfoInputs.cache
+C:\Users\nick-\source\repos\LolEsports\LolEsports\obj\Debug\netcoreapp2.0\LolEsports.AssemblyInfo.cs
+C:\Users\nick-\source\repos\LolEsports\LolEsports\obj\Debug\netcoreapp2.0\LolEsports.dll
+C:\Users\nick-\source\repos\LolEsports\LolEsports\obj\Debug\netcoreapp2.0\LolEsports.pdb
