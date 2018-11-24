@@ -3,8 +3,8 @@
     margin: 0 auto;
     display: block;
     top: 50px;
-    font-family: 'Arimo', sans-serif;
-    font-size: 17px;
+    font-family: 'Noto Serif',serif;
+    font-size: 16px;
     color: #a09b8c;
     background-color: rgb(1, 10, 19);
     border: 2px solid #463714;
@@ -18,10 +18,13 @@
     color: #f0e6d2;
     border: 2px solid #463714;
     border-radius: 0;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 3px;
 }
 
 .signin-title {
-    font-size: 45px;
+    font-size: 35px;
     color: #f0e6d2;
     font-family: 'Noto Serif', serif;
     border-bottom: 1px solid #463714;
@@ -40,13 +43,33 @@
     background-image: url(http://www.lol-wallpapers.com/wp-content/uploads/2016/12/Teambuilder-Promo-Art-HD-Wallpaper-Background-Official-Art-Artwork-League-of-Legends-lol.jpg);
 }
 
-.signin-btn {
+.signup-btn {
     height: 50px;
-    font-size: 25px;
+    font-size: 20px;
+    color: #cdfafa;
     font-weight: bold;
     background-color: #1e2328;
     font-family: 'Spectral';
     border: solid 1px #3885c7;
+    width: 36%;
+    float: right;
+}
+
+    .signup-btn:hover {
+        border: solid 1px #3885c7;
+        background: rgb(2,0,36);
+        background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(30,35,40,1) 39%, rgba(15,93,108,1) 100%);
+    }
+
+.signin-btn {
+    height: 50px;
+    font-size: 20px;
+    color: #cdfafa;
+    font-weight: bold;
+    background-color: #1e2328;
+    font-family: 'Spectral';
+    border: solid 1px #3885c7;
+    width: 61%;
 }
 
     .signin-btn:hover {
@@ -54,3 +77,41 @@
         background: rgb(2,0,36);
         background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(30,35,40,1) 39%, rgba(15,93,108,1) 100%);
     }
+
+    .signin-btns {
+        margin-bottom: -20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+.signin-error {
+    margin-top: 15px;
+    background-color: #F44336;
+    color: black;
+    font-weight: bold;
+    border-radius: 0;
+    border: 1px solid #C62828;
+    font-size: 12px;
+    text-align: center;
+}
+
+.signin-modal {
+    height: 150px;
+    max-width: 350px;
+    margin: 0 auto;
+    background: linear-gradient(#1F394B, #0D1417);
+    border-color: #7e744e #b6a671 #55513a #b6a671;
+    color: white;
+    font-family: 'serif';
+    box-shadow: inset 0 0 3px 1px rgba(0,0,0,.3), -1px 1px 10px 0 rgba(0,0,0,.8);
+}
+
+.signin-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 100px;
+    margin-bottom: 100px;
+}

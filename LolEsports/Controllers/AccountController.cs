@@ -17,7 +17,7 @@ namespace LolEsports.Controllers
 
         [HttpPost]
         [Route("/api/AddAccount")]
-        public DataStructure AddAccount(Account account)
+        public DataStructure AddAccount([FromBody]Account account)
         {
             var data = transaction.AddAccount(account);
             return data;

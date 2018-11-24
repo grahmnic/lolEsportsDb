@@ -58,6 +58,7 @@ namespace LolEsports.DataAccess
                             data.message = "That username is not available.";
                             return data;
                         }
+                        account.LevelAccess = 3;
                         context.Add(account);
                         context.SaveChanges();
                         dbContextTransaction.Commit();
