@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
@@ -10,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { SignInComponent } from './components/sign-in/signin.component';
+import { DataService } from './components/shared/dataservice';
 
 @NgModule({
     declarations: [
@@ -29,9 +31,11 @@ import { SignInComponent } from './components/sign-in/signin.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'sign-in', component: SignInComponent },
-            { path: '**', redirectTo: 'home' }
+            { path: 'sign-in', component: SignInComponent }
         ])
+    ],
+    providers: [
+        DataService
     ]
 })
 export class AppModuleShared {

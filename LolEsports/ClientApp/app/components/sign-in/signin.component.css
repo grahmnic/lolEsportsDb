@@ -2,4 +2,55 @@
     position: relative;
     margin: 0 auto;
     display: block;
+    top: 50px;
+    font-family: 'Arimo', sans-serif;
+    font-size: 17px;
+    color: #a09b8c;
+    background-color: rgb(1, 10, 19);
+    border: 2px solid #463714;
+    width: 60%;
+    min-width: 400px;
+    max-width: 600px;
 }
+
+.signin-input {
+    background-color: #1e2328;
+    color: #f0e6d2;
+    border: 2px solid #463714;
+    border-radius: 0;
+}
+
+.signin-title {
+    font-size: 45px;
+    color: #f0e6d2;
+    font-family: 'Noto Serif', serif;
+    border-bottom: 1px solid #463714;
+}
+
+.signin-check {
+    font-size: 10px;
+}
+
+.signin-page {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url(http://www.lol-wallpapers.com/wp-content/uploads/2016/12/Teambuilder-Promo-Art-HD-Wallpaper-Background-Official-Art-Artwork-League-of-Legends-lol.jpg);
+}
+
+.signin-btn {
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #1e2328;
+    font-family: 'Spectral';
+    border: solid 1px #3885c7;
+}
+
+    .signin-btn:hover {
+        border: solid 1px #3885c7;
+        background: rgb(2,0,36);
+        background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(30,35,40,1) 39%, rgba(15,93,108,1) 100%);
+    }

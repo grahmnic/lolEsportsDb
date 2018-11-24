@@ -11,13 +11,12 @@ using System.Web;
 
 namespace LolEsports.Controllers
 {
-    [Route("/api/account")]
     public class AccountController : Controller
     {
         AccountTransaction transaction = new AccountTransaction();
 
         [HttpPost]
-        [Route("/add")]
+        [Route("/api/AddAccount")]
         public DataStructure AddAccount(Account account)
         {
             var data = transaction.AddAccount(account);
@@ -25,7 +24,7 @@ namespace LolEsports.Controllers
         }
 
         [HttpGet]
-        [Route("/signin/{user}/{password}")]
+        [Route("/api/signin/{user}/{password}")]
         public LoginStructure GetAccount(String user, String password)
         {
             var data = transaction.GetAccount(user, password);
