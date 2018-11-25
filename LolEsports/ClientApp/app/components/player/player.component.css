@@ -1,8 +1,6 @@
 ﻿.player-page {
-    width: 100%;
     background: #222;
     padding-top: 75px;
-    padding-right: 15px;
 }
 
 .player-title {
@@ -35,7 +33,6 @@
     border-bottom: groove 2px #595c5e;
     display: block;
     margin: 0 auto;
-    width: calc(100vw + 15px);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
