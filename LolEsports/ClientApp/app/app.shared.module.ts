@@ -35,7 +35,7 @@ import { AboutComponent } from './components/about/about.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'about', component: AboutComponent }
+            { path: 'about', component: AboutComponent },
             { path: 'sign-in', component: SignInComponent },
             { path: 'player/:id', component: PlayerComponent }
         ])
