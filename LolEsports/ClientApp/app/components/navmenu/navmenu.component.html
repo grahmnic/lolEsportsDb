@@ -1,19 +1,20 @@
 <div class="header">
     <div class="container-fluid">
 
-        <a class="navbar-left" [routerLink]="['/home']" style="margin-top:10px;">
-            <img alt="Brand" src="https://png2.kisspng.com/sh/de48a17850d11d57227a56ad21dba273/L0KzQYm3VMI3N5VriZH0aYP2gLBuTfxmaZh6fZ94Zj3vdbjsjvR0NZR0heJAdHX1PbrqjB50NZhmitd3YT35ebXsj71oaZ5qRd5uZ3XxdMS0VfFmOmM4S6luMkToRIa1UMc0PGo9UKI6NUK3R4eCVckyQWM8RuJ3Zx==/kisspng-league-of-legends-computer-icons-garena-video-game-legends-5ae22337e24e45.073498801524769591927.png" width="50" height="50">
+        <a class="header-buttons" style="float:left; margin-bottom: 12px; margin-left: 0;" [routerLink]="['/home']">
+            <img class="header-buttons" style="float:left; margin-top: 0;" alt="Brand" src="http://www.macupdate.com/images/icons256/47210.png" width="50" height="50">
         </a>
-        <a class="button header-buttons" style="float:left;" [routerLink]="['/counter']">Home</a>
 
-        <a class="button header-buttons" style="float:left;" [routerLink]="['/fetch-data']">Fetch</a>
+        <a class="button header-buttons" style="float:left;" [routerLink]="['/home']">Home</a>
+
+        <a class="button header-buttons" style="float:left;" [routerLink]="['/about']">About</a>
 
         <a class="button header-buttons" style="float:right;" [routerLink]="['/sign-in']">Sign In</a>
 
         <form class="form-inline" style="float:right;">
             <input type="text" name="searchbar" placeholder="Search..." />
         </form>
-
+            
 
     </div>
 </div>

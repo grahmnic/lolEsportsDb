@@ -13,6 +13,7 @@ import { CounterComponent } from './components/counter/counter.component';
 import { SignInComponent } from './components/sign-in/signin.component';
 import { DataService } from './components/shared/dataservice';
 import { PlayerComponent } from './components/player/player.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { PlayerComponent } from './components/player/player.component';
         FetchDataComponent,
         HomeComponent,
         SignInComponent,
+        AboutComponent,
         PlayerComponent
     ],
     imports: [
@@ -33,6 +35,7 @@ import { PlayerComponent } from './components/player/player.component';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
+            { path: 'about', component: AboutComponent }
             { path: 'sign-in', component: SignInComponent },
             { path: 'player/:id', component: PlayerComponent }
         ])

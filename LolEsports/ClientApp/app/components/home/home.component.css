@@ -1,14 +1,22 @@
-.background {
-	background-image: url(https://cdn.esportsmatrix.com/lol/content/images/uploaded/cms/2018/Feb/128/WORLD.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 100vw;
-	height: 100vh;
-	color: white;
+.background-image {
+    background-image: url(https://cdn.esportsmatrix.com/lol/content/images/uploaded/cms/2018/Feb/128/WORLD.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -3;
+    object-fit: cover;
 }
 
-.body_text {
-	padding-top: 10vh;
-	margin-left: 5vw;
+.container {
+    
 }
+
+.thread-post {
+
+
+}
+
+
 
