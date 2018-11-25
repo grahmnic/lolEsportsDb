@@ -12,6 +12,7 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { SignInComponent } from './components/sign-in/signin.component';
 import { DataService } from './components/shared/dataservice';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { DataService } from './components/shared/dataservice';
         FetchDataComponent,
         HomeComponent,
         SignInComponent,
+        AboutComponent,
     ],
     imports: [
         CommonModule,
@@ -31,7 +33,8 @@ import { DataService } from './components/shared/dataservice';
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
-            { path: 'sign-in', component: SignInComponent }
+            { path: 'sign-in', component: SignInComponent },
+            { path: 'about', component: AboutComponent }
         ])
     ],
     providers: [
