@@ -1,0 +1,87 @@
+﻿<div class="player-page">
+
+    <div class="player-header" [ngStyle]="{ 'background-image': 'url(' + player.TeamImage + ')'}">
+            <div class="player-name">
+                {{player.PlayerIGN}}
+            </div>
+            <div class="player-real-name">
+                {{player.PersonName}}
+            </div>
+            <img class="player-image" src={{player.PlayerImage}} />
+    </div>
+    <div class="row player-stats">
+        <div class="col-md-3">
+            <div class="jumbotron jumbotron-fluid player-jumbotron">
+                <div class="container">
+                    <h1 class="display-4 player-title">KDA</h1>
+                    <p class="lead player-text">{{(player.TotalKills+player.TotalAssists) / player.TotalDeaths}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="jumbotron jumbotron-fluid player-jumbotron">
+                <div class="container">
+                    <h1 class="display-4 player-title">Total Kills</h1>
+                    <p class="lead player-text">{{player.TotalKills}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="jumbotron jumbotron-fluid player-jumbotron">
+                <div class="container">
+                    <h1 class="display-4 player-title">Total Assists</h1>
+                    <p class="lead player-text">{{player.TotalAssists}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="jumbotron jumbotron-fluid player-jumbotron">
+                <div class="container">
+                    <h1 class="display-4 player-title">Total Score</h1>
+                    <p class="lead player-text">{{player.TotalScore}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row player-stats">
+        <div class="col-md-4">
+            <div class="jumbotron jumbotron-fluid player-jumbotron">
+                <div class="container">
+                    <h1 class="display-4 player-title" style="text-align: center">Salary</h1>
+                    <br />
+                    <p class="lead player-text" style="text-align: center">{{player.Salary | currency:'USD':true}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="jumbotron jumbotron-fluid player-jumbotron">
+                <div class="container">
+                    <img class="player-info-img" src={{role}} />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="jumbotron jumbotron-fluid player-jumbotron">
+                <div class="container">
+                    <h1 class="display-4 player-title" style="text-align: center">Hometown</h1>
+                    <br />
+                    <p class="lead player-text" style="text-align: center">{{player.Hometown}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row player-bio">
+        <div class="col-md-12">
+            <h1 class="display-4 player-title" style="text-decoration: underline;font-size: 35px; font-family: Oswald;">Biography</h1>
+            <br />
+            <p class="lead player-bio-text">
+                {{player.Biography}}
+            </p>
+        </div>
+    </div>
+    <div class="row player-info">
+        <div class="col-md-3">
+
+        </div>
+    </div>
+</div>

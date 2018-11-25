@@ -14,6 +14,7 @@ namespace LolEsports.Models
 
         public int ChampionId { get; set; }
         public string ChampionName { get; set; }
+        public string ChampionImage { get; set; }
 
         public ICollection<FavoriteChampionRef> FavoriteChampionRef { get; set; }
         public ICollection<PlayerMatchRef> PlayerMatchRefChampionBanned { get; set; }

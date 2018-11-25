@@ -1,0 +1,101 @@
+﻿.player-page {
+    background: #222;
+    padding-top: 10vh;
+}
+
+.player-title {
+    font-size: 30px;
+    color: #e9ecef;
+}
+
+.player-text {
+    font-size: 25px;
+    color: #e9ecef;
+}
+
+.player-jumbotron {
+    background-color: transparent;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.player-image {
+    width: 60vw;
+    height: auto;
+    max-width: 600px;
+    min-width: 350px;
+    display: block;
+    margin: 0 auto;
+}
+
+.player-header {
+    border-bottom: groove 2px #595c5e;
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.player-name {
+    color: #e9ecef;
+    font-size: calc(6vw + 15px);
+    text-align: center;
+    font-family: Oswald;
+}
+
+.player-real-name {
+    color: #e9ecef;
+    font-size: calc(2vw + 5px);
+    text-align: center;
+    font-family: Oswald;
+    margin-top: -5px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Pathway+Gothic+One');
+.player-team {
+    color: #C4C7CB;
+    font-size: calc(5vw + 5px);
+    text-align: center;
+    font-family: 'Pathway Gothic One', sans-serif;
+    margin-bottom: -50px;
+    margin-top: -20px;
+}
+
+.player-stats {
+    padding-top: 20px;
+    border-bottom: groove 2px #595c5e;
+}
+
+.player-role {
+    display: inline;
+}
+
+.player-bio {
+    padding: 40px;
+}
+
+.player-bio-text {
+    font-size: 24px;
+    color: #e9ecef;
+}
+
+.player-info {
+    color: #C4C7CB;
+    font-size: 20px;
+}
+
+.player-info-img {
+    margin: 0 auto;
+    display: block;
+}
+
+.player-background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+}

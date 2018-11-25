@@ -10,11 +10,17 @@ export class DataService {
         this.myAppUrl = baseUrl;
     }
 
+    //Account Transactions
     addAccount(account) {
         return this.http.post(this.myAppUrl + 'api/AddAccount', account);
     }
 
     getAccount(username, password) {
         return this.http.get(this.myAppUrl + 'api/signin/' + username + '/' + password);
+    }
+
+    //Player Transactions
+    getPlayer(id) {
+        return this.http.get(this.myAppUrl + 'api/GetPlayer/' + id);
     }
 } 

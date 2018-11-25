@@ -16,6 +16,7 @@ namespace LolEsports.Models
         public int TeamId { get; set; }
         public string TeamName { get; set; }
         public int RegionId { get; set; }
+        public string TeamLogo { get; set; }
 
         public Region Region { get; set; }
         public ICollection<CompetitorTeamRef> CompetitorTeamRef { get; set; }

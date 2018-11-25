@@ -23,6 +23,7 @@ namespace LolEsports.Models
         public int TotalDeaths { get; set; }
         public int TotalAssists { get; set; }
         public string Quote { get; set; }
+        public string PlayerImage { get; set; }
 
         public Person Person { get; set; }
         public ICollection<CompetitorTeamRef> CompetitorTeamRef { get; set; }

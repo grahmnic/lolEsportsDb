@@ -65,6 +65,8 @@ namespace LolEsports.Models
             {
                 entity.Property(e => e.ChampionId).HasColumnName("ChampionID");
 
+                entity.Property(e => e.ChampionImage).IsUnicode(false);
+
                 entity.Property(e => e.ChampionName)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -290,9 +292,7 @@ namespace LolEsports.Models
             {
                 entity.Property(e => e.PersonId).HasColumnName("PersonID");
 
-                entity.Property(e => e.Biography)
-                    .HasMaxLength(150)
-                    .IsUnicode(false);
+                entity.Property(e => e.Biography).IsUnicode(false);
 
                 entity.Property(e => e.Hometown)
                     .HasMaxLength(20)
@@ -317,6 +317,8 @@ namespace LolEsports.Models
                     .HasColumnName("PlayerIGN")
                     .HasMaxLength(20)
                     .IsUnicode(false);
+
+                entity.Property(e => e.PlayerImage).IsUnicode(false);
 
                 entity.Property(e => e.PlayerRole)
                     .IsRequired()
@@ -386,6 +388,8 @@ namespace LolEsports.Models
                 entity.Property(e => e.TeamId).HasColumnName("TeamID");
 
                 entity.Property(e => e.RegionId).HasColumnName("RegionID");
+
+                entity.Property(e => e.TeamLogo).IsUnicode(false);
 
                 entity.Property(e => e.TeamName)
                     .IsRequired()
