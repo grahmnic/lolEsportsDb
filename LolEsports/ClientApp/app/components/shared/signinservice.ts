@@ -18,6 +18,10 @@ export class SigninService {
         return this.champion;
     }
 
+    getuserId() {
+        return this.userid;
+    }
+
     signIn(userid, championImage) {
         this.signed = true;
         this.userid = userid;

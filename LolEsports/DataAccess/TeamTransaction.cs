@@ -31,7 +31,7 @@ namespace LolEsports.DataAccess
                         data.TeamName = team.TeamName;
                         data.TeamPicture = team.TeamPicture;
                         PlayerTransaction pTransaction = new PlayerTransaction();
-                        data.Coach = 
+                        //data.Coach = 
 
                         dbContextTransaction.Commit();
                         data.error = 0;

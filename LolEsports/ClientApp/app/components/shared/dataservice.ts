@@ -30,4 +30,7 @@ export class DataService {
     }
 
     //Profile Transactions
+    getProfile(id) {
+        return this.http.get(this.myAppUrl + 'api/GetProfile/' + id);
+    }
 } 

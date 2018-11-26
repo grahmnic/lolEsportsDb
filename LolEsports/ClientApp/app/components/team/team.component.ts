@@ -3,9 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../shared/dataservice';
 
 @Component({
-    selector: 'profile',
-    templateUrl: './profile.component.html',
-    styleUrls: ['./profile.component.css']
+    selector: 'team',
+    templateUrl: './team.component.html',
+    styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
     id: any;

@@ -10,17 +10,21 @@ import { Router } from '@angular/router';
 export class NavMenuComponent implements OnInit{
     signedIn: boolean = false;
     champion: any;
+    userId: any;
+
 
     constructor(private signinService: SigninService, private router: Router) {
         router.events.subscribe((val) => {
             this.signedIn = this.signinService.getStatus();
             this.champion = this.signinService.getChampion();
+            this.userId = this.signinService.getuserId();
         });
     }
 
     ngOnInit() {
         this.signedIn = this.signinService.getStatus();
         this.champion = this.signinService.getChampion();
+        this.userId = this.signinService.getuserId();
     }
 
     logout() {
