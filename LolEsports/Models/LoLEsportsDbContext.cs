@@ -51,6 +51,8 @@ namespace LolEsports.Models
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
+                entity.Property(e => e.ChampionId).HasColumnName("ChampionID");
+
                 entity.Property(e => e.Password)
                     .IsRequired()
                     .IsUnicode(false);
@@ -59,6 +61,11 @@ namespace LolEsports.Models
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.Champion)
+                    .WithMany(p => p.Account)
+                    .HasForeignKey(d => d.ChampionId)
+                    .HasConstraintName("FK_Account_Champion");
             });
 
             modelBuilder.Entity<Champion>(entity =>
@@ -395,6 +402,8 @@ namespace LolEsports.Models
                     .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.TeamPicture).IsUnicode(false);
 
                 entity.HasOne(d => d.Region)
                     .WithMany(p => p.Team)

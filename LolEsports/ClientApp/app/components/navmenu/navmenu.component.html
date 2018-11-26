@@ -9,8 +9,11 @@
 
         <a class="button header-buttons" style="float:left;" [routerLink]="['/about']">About</a>
 
-        <a class="button header-buttons" style="float:right;" [routerLink]="['/sign-in']">Sign In</a>
-
+        <a *ngIf="!signedIn" class="button header-buttons" style="float:right;" [routerLink]="['/sign-in']">Sign In</a>
+        <div *ngIf="signedIn">
+            <a class="button header-buttons navmenu-logout" style="float:right; color: goldenrod; cursor: pointer" (click)="logout()">Logout</a>
+            <img class="navmenu-img" src={{champion}} />
+        </div>
         <form class="form-inline" style="float:right;">
             <input type="text" name="searchbar" placeholder="Search..." />
         </form>

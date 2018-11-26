@@ -12,8 +12,11 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { SignInComponent } from './components/sign-in/signin.component';
 import { DataService } from './components/shared/dataservice';
+import { SigninService } from './components/shared/signinservice';
 import { PlayerComponent } from './components/player/player.component';
 import { AboutComponent } from './components/about/about.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { TeamComponent } from './components/team/team.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +27,9 @@ import { AboutComponent } from './components/about/about.component';
         HomeComponent,
         SignInComponent,
         AboutComponent,
-        PlayerComponent
+        PlayerComponent,
+        ProfileComponent,
+        TeamComponent
     ],
     imports: [
         CommonModule,
@@ -37,11 +42,14 @@ import { AboutComponent } from './components/about/about.component';
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'about', component: AboutComponent },
             { path: 'sign-in', component: SignInComponent },
-            { path: 'player/:id', component: PlayerComponent }
+            { path: 'player/:id', component: PlayerComponent },
+            { path: 'profile/:id', component: ProfileComponent },
+            { path: 'team/:id', component: TeamComponent}
         ])
     ],
     providers: [
-        DataService
+        DataService,
+        SigninService
     ]
 })
 export class AppModuleShared {

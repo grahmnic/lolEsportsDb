@@ -18,7 +18,9 @@ namespace LolEsports.Models
         public int LevelAccess { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public int? ChampionId { get; set; }
 
+        public Champion Champion { get; set; }
         public ICollection<FavoriteChampionRef> FavoriteChampionRef { get; set; }
         public ICollection<FavoritePlayerRef> FavoritePlayerRef { get; set; }
         public ICollection<FavoriteRegionRef> FavoriteRegionRef { get; set; }

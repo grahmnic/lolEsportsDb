@@ -51,15 +51,15 @@ export class PlayerComponent implements OnInit {
                         this.player.TeamName = d.teamName;
 
                         if (this.player.PlayerRole == "BOT") {
-                            this.role = "https://universe.leagueoflegends.com/images/role_icon_marksman.png";
+                            this.role = "https://elo-boost.net/images/roles/ad.png";
                         } else if (this.player.PlayerRole == "SUP") {
-                            this.role = "https://universe.leagueoflegends.com/images/role_icon_support.png";
+                            this.role = "https://elo-boost.net/images/roles/support.png";
                         } else if (this.player.PlayerRole == "MID") {
-                            this.role = "http://universe.leagueoflegends.com/images/role_icon_fighter.png";
+                            this.role = "https://elo-boost.net/images/roles/mid.png";
                         } else if (this.player.PlayerRole == "JUG") {
-                            this.role = "https://www.mobafire.com/images/wiki/roles/jungler.png";
+                            this.role = "https://elo-boost.net/images/roles/jungle.png";
                         } else if (this.player.PlayerRole == "TOP") {
-                            this.role = "http://universe.leagueoflegends.com/images/role_icon_mage.png";
+                            this.role = "https://elo-boost.net/images/roles/top.png";
                         }
                     }
                 });

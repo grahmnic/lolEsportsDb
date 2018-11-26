@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../shared/dataservice';
+import { SigninService } from '../shared/signinservice';
 
 @Component({
     selector: 'signin',
@@ -16,7 +17,7 @@ export class SignInComponent implements OnInit{
     error_signup: boolean = false;
     error_signup_message: string = "";
 
-    constructor(private dataService: DataService, private router: Router) {
+    constructor(private signinService: SigninService, private dataService: DataService, private router: Router) {
 
     }
 
@@ -63,6 +64,7 @@ export class SignInComponent implements OnInit{
                         this.error_login_message = d.message;
                     } else {
                         this.error_login = false;
+                        this.signinService.signIn(d.userID, d.championImage);
                         this.router.navigate(['/home']);
                     }
                 });

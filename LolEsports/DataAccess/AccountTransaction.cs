@@ -28,6 +28,7 @@ namespace LolEsports.DataAccess
                         }
                         login.error = 0;
                         login.UserID = acc.UserId;
+                        login.ChampionImage = context.Champion.Where(i => i.ChampionId == acc.ChampionId).Select(x => x.ChampionImage).FirstOrDefault();
                         return login;
                     }
                     catch (Exception)

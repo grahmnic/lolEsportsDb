@@ -10,5 +10,6 @@ namespace LolEsports.DataStructures
         public int error;
         public String message;
         public int UserID;
+        public String ChampionImage;
     }
 }

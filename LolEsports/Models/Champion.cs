@@ -7,6 +7,7 @@ namespace LolEsports.Models
     {
         public Champion()
         {
+            Account = new HashSet<Account>();
             FavoriteChampionRef = new HashSet<FavoriteChampionRef>();
             PlayerMatchRefChampionBanned = new HashSet<PlayerMatchRef>();
             PlayerMatchRefChampionPlayed = new HashSet<PlayerMatchRef>();
@@ -16,6 +17,7 @@ namespace LolEsports.Models
         public string ChampionName { get; set; }
         public string ChampionImage { get; set; }
 
+        public ICollection<Account> Account { get; set; }
         public ICollection<FavoriteChampionRef> FavoriteChampionRef { get; set; }
         public ICollection<PlayerMatchRef> PlayerMatchRefChampionBanned { get; set; }
         public ICollection<PlayerMatchRef> PlayerMatchRefChampionPlayed { get; set; }

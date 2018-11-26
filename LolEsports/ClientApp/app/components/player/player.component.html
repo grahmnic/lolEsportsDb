@@ -1,12 +1,13 @@
 ﻿<div class="player-page">
     <div class="player-header" [ngStyle]="{ 'background-image': 'url(' + player.TeamImage + ')'}">
-            <div class="player-name">
-                {{player.PlayerIGN}}
-            </div>
-            <div class="player-real-name">
-                {{player.PersonName}}
-            </div>
-            <img class="player-image" src={{player.PlayerImage}} />
+        <div class="player-name">
+            {{player.PlayerIGN}}
+        </div>
+        <div class="player-real-name">
+            {{player.PersonName}}
+        </div>
+        <img class="player-image" src={{player.PlayerImage}} />
+        <button type="button" class="btn btn-default player-btn">&nbsp;&nbsp;&nbsp;FOLLOW PLAYER&nbsp;&nbsp;</button>
     </div>
     <div class="row player-stats">
         <div class="col-md-3">
@@ -71,16 +72,11 @@
     </div>
     <div class="row player-bio">
         <div class="col-md-12">
-            <h1 class="display-4 player-title" style="text-decoration: underline;font-size: 35px; font-family: Oswald;">Biography</h1>
+            <h1 class="display-4 player-title badge badge-secondary" style="text-decoration: underline;font-size: 35px; font-family: Oswald;">Biography</h1>
             <br />
             <p class="lead player-bio-text">
                 {{player.Biography}}
             </p>
-        </div>
-    </div>
-    <div class="row player-info">
-        <div class="col-md-3">
-
         </div>
     </div>
 </div>

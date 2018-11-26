@@ -23,4 +23,11 @@ export class DataService {
     getPlayer(id) {
         return this.http.get(this.myAppUrl + 'api/GetPlayer/' + id);
     }
+
+    //Team Transactions
+    getTeam(id) {
+        return this.http.get(this.myAppUrl + 'api/GetTeam/' + id);
+    }
+
+    //Profile Transactions
 } 
