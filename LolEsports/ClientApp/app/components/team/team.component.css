@@ -1,1 +1,94 @@
-﻿
+﻿.team-page {
+    background: #222;
+}
+
+.team-margin {
+    padding-top: 100px;
+}
+
+.team-map {
+
+}
+
+.team-row {
+    border-top: 1px inset #222;
+    border-bottom: 1px inset #222;
+    background: rgb(43,42,42);
+    background: linear-gradient(169deg, rgba(43,42,42,1) 0%, rgba(73,72,71,1) 100%, rgba(70,55,20,1) 100%);
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-in-out;
+}
+
+    .team-row:hover {
+        transform: scale(1.15);
+        box-shadow: 0px 0px 1px 1px #ecc572;
+    }
+
+.team-row td {
+    padding: 0;
+}
+
+.team-table-wrapper {
+    box-shadow: 0 0 10px 10px #111;
+    width: 75vw;
+}
+
+.team-player {
+    width: 200px;
+    height: auto;
+}
+
+.team-table {
+    color: azure;
+    font-size: 50px;
+    font-family: Oswald;
+    text-align: center;
+}
+
+.team-text {
+    line-height: 160px;
+    border-top: none;
+    padding: 0;
+}
+
+.team-header {
+    position: relative;
+    margin: 0 auto;
+    z-index: 0;
+    width: calc(8vw + 100px);
+    height: calc(6vw + 30px);
+    max-width: 200px;
+    max-height: 100px;
+    background: linear-gradient(to bottom,#ecc572 0,#815500 100%);
+    color: white;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 25px rgba(0,0,0,.11);
+    padding: 2px;
+    min-width: 171px;
+    min-height: 82px;
+    border-radius: 30%;
+}
+
+.team-header-2 {
+    width: 100%;
+    height: 100%;
+    background: #111;
+    border-radius: 30%;
+}
+
+.team-img {
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.c-divider {
+    margin: 0 auto;
+    display: block;
+    transform-origin: center bottom;
+    backface-visibility: hidden;
+    width: 90vw;
+    max-width: 900px;
+    margin-top: 10px;
+}
