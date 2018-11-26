@@ -30,5 +30,13 @@ namespace LolEsports.Controllers
             var data = transaction.GetAccount(user, password);
             return data;
         }
+
+        [HttpGet]
+        [Route("/api/GetProfile/{id}")]
+        public ProfileStructure GetProfile(int id)
+        {
+            var data = transaction.GetProfile(id);
+            return data;
+        }
     }
 }

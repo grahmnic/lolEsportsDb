@@ -77,5 +77,34 @@ namespace LolEsports.DataAccess
                 }
             }
         }
+
+        public ProfileStructure GetProfile(int id)
+        {
+            using (var context = new LoLEsportsDbContext())
+            {
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        ProfileStructure newProf = new ProfileStructure();
+                        Account acc = context.Account.Where(x => x.UserId == id).FirstOrDefault();
+                        newProf.UserID = acc.UserId;
+                        newProf.UserName = acc.UserName;
+                        newProf.ChampionImage = context.Champion.Where(x => x.ChampionId == acc.ChampionId).Select(y => y.ChampionImage).FirstOrDefault();
+                        newProf.error = 0;
+                        dbContextTransaction.Commit();
+                        return newProf;
+                    }
+                    catch (Exception)
+                    {
+                        dbContextTransaction.Rollback();
+                        ProfileStructure data = new ProfileStructure();
+                        data.error = 1;
+                        data.message = "Database could not commit transaction.";
+                        return data;
+                    }
+                }
+            }
+        }
     }
 }

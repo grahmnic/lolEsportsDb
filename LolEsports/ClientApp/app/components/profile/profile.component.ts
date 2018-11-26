@@ -11,8 +11,8 @@ export class ProfileComponent implements OnInit {
     id: any;
     error: any;
     error_message: any;
-    player: any = {};
-    role: any;
+    userName: any;
+    championImage: any;
 
     constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) {
 
@@ -21,6 +21,17 @@ export class ProfileComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(params => {
             this.id = +params['id'];
+            this.dataService.getProfile(this.id)
+                .subscribe((data) => {
+                    var json = data.json();
+                    if (json.error == 0) {
+                        this.userName = json.userName;
+                        this.championImage = json.championImage;
+                    } else {
+                        this.error = 1;
+                        this.error_message = json.message;
+                    }
+                });
 
         });
     }

@@ -1,1 +1,69 @@
-﻿
+﻿.background-image {
+    background-image: url(https://haste.net/wp-content/uploads/2017/11/Worlds2017Thumbnail.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -3;
+    object-fit: cover;
+}
+
+.text-block {
+    position: absolute;
+    color: steelblue;
+    background: rgba(255, 255, 255, 0.92);
+    width:25vw;
+    margin-top: 7.5vh;
+    left: calc(50vw - 12.5vw);
+    border-radius: 25px;
+    border: 2px solid;
+    border-color: darkgoldenrod;
+    padding: 20px;
+    font-size: large;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Oswald;
+}
+
+.profile-img {
+    display: block;
+    z-index: 1;
+    border: solid 5px white;
+    box-shadow: 0 2px 6px 6px black unset;
+    margin-top: 25vh;
+    margin-left: calc(50vw - 60px);
+    height: 120px;
+    width: 120px;
+}
+
+.button-block {
+    position: absolute;
+    color: steelblue;
+    background: rgba(0, 0, 0, 0.6);
+    width: 60vw;
+    height: 150px;
+    bottom: 0;
+    position: fixed;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border: 2px solid;
+    border-bottom: 0;
+    border-color: darkgoldenrod;
+    padding: 20px;
+    font-size: large;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Oswald;
+    transition: 1s;
+}
+
+    .button-block:hover {
+        background:rgba(0, 0, 0, 0.3) ;
+    }
+
+.profile-button {
+
+}
