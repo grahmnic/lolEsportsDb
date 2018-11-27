@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
             this.id = +params['id'];
             this.dataService.getProfile(this.id)
                 .subscribe((data) => {
+                    console.log(data);
                     var json = data.json();
                     if (json.error == 0) {
                         this.userName = json.userName;

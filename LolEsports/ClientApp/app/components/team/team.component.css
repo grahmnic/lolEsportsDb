@@ -16,7 +16,50 @@
     background: rgb(43,42,42);
     background: linear-gradient(169deg, rgba(43,42,42,1) 0%, rgba(73,72,71,1) 100%, rgba(70,55,20,1) 100%);
     transition: transform 0.25s ease-out, box-shadow 0.25s ease-in-out;
+    cursor: pointer;
 }
+
+.team-coach-text {
+    font-size: 50px;
+    border-top: none;
+    width: 80vw;
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    color: transparent;
+    background: linear-gradient(169deg, rgba(74,59,36,1) 0%, rgba(219,194,123,1) 100%, rgba(70,55,20,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Oswald;
+    font-weight: bold;
+}
+
+.team-position {
+    font-size: 22px;
+    color: #444b52;
+    line-height: 170px;
+}
+
+.team-coach-name {
+    font-size: 30px;
+}
+
+.player-btn {
+    position: absolute;
+    top: 90px;
+    right: 25px;
+    background: url(https://cdn.leagueoflegends.com/riotbar/prod/1.6.180/images/account/sprites-s2a5147f733.png) 0 -293px;
+    color: #b49a5d;
+    font-size: 13px;
+    line-height: 32px;
+    font-family: "Merriweather Sans", sans-serif;
+    padding: 5px 0px;
+    border: none;
+}
+
+    .player-btn:hover {
+        background: url(https://cdn.leagueoflegends.com/riotbar/prod/1.6.180/images/account/sprites-s2a5147f733.png) 0 -237px;
+    }
 
     .team-row:hover {
         transform: scale(1.15);
@@ -35,6 +78,7 @@
 .team-player {
     width: 200px;
     height: auto;
+    transform: translateY(10px);
 }
 
 .team-table {
