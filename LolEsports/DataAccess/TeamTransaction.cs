@@ -1,5 +1,6 @@
 ﻿using LolEsports.DataStructures;
 using LolEsports.Models;
+using Microsoft.AspNetCore.Server.Kestrel.Internal.System.Collections.Sequences;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,8 @@ namespace LolEsports.DataAccess
                     {
                         TeamStructure data = new TeamStructure();
                         Coach coach = context.Coach.Where(i => i.CoachId == context.CompetitorTeamRef.Where(x => x.TeamId == TeamId).Select(m => m.CoachId).FirstOrDefault()).FirstOrDefault();
-                        if (coach != null)
+                        Person coachPerson = context.Person.Where(i => i.PersonId == coach.PersonId).FirstOrDefault();
+                        if (coach == null)
                         {
                             data.error = 1;
                             data.message = "There is no coach available for this team.";
@@ -30,19 +32,27 @@ namespace LolEsports.DataAccess
                         data.TeamLogo = team.TeamLogo;
                         data.TeamName = team.TeamName;
                         data.TeamPicture = team.TeamPicture;
-                        PlayerTransaction pTransaction = new PlayerTransaction();
-                        //data.Coach = 
+
+                        data.CoachName = coachPerson.PersonName;
+                        data.CoachIgn = coach.CoachIgn;
+                        data.ids = new List<int>();
+
+                        var t = context.CompetitorTeamRef.Where(i => i.TeamId == TeamId).Select(x => x.PlayerId).ToList();
+                        t.ForEach(x =>
+                        {
+                            data.ids.Add(x);
+                        });
 
                         dbContextTransaction.Commit();
                         data.error = 0;
                         return data;
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         dbContextTransaction.Rollback();
                         TeamStructure data = new TeamStructure();
                         data.error = 1;
-                        data.message = "Database could not commit transaction.";
+                        data.message = e.ToString();
 
                         return data;
                     }

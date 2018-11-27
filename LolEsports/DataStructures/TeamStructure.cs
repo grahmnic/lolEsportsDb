@@ -15,7 +15,8 @@ namespace LolEsports.DataStructures
         public int RegionID;
         public String TeamLogo;
         public String TeamPicture;
-        public PlayerStructure Coach;
-        public ArrayList<PlayerStructure> Players;
+        public String CoachIgn;
+        public String CoachName;
+        public List<int> ids;
     }
 }

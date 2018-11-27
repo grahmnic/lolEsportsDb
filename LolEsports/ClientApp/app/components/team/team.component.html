@@ -1,1 +1,37 @@
-﻿
+﻿<div class="team-page">
+    <div class="team-margin">
+        <div class="team-roster">
+            <div class="team-header">
+                <div class="team-header-2">
+                    <img class="team-img" src={{team_logo}} />
+                </div>
+            </div>
+            <img class="c-divider" src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/multistep-signup/en_US/e0bb822a607f625055c839107fdf8a5e0c1f7427/assets/img/divider.png" alt="divide">
+            <table class="table team-table-wrapper" style="max-width: 700px; margin: 20px auto;">
+                <tbody class="team-table">
+                    <tr class="team-row">
+                        <th class="team-text">{{top.PlayerIGN}}</th>
+                        <td style="border-top: none"><img class="team-player" src={{top.PlayerImage}} /></td>
+                    </tr>
+                    <tr class="team-row">
+                        <th class="team-text">{{jungle.PlayerIGN}}</th>
+                        <td style="border-top: none"><img class="team-player" src={{jungle.PlayerImage}} /></td>
+                    </tr>
+                    <tr class="team-row">
+                        <th class="team-text">{{mid.PlayerIGN}}</th>
+                        <td style="border-top: none"><img class="team-player" src={{mid.PlayerImage}} /></td>
+                    </tr>
+                    <tr class="team-row">
+                        <th class="team-text">{{bottom.PlayerIGN}}</th>
+                        <td style="border-top: none"><img class="team-player" src={{bottom.PlayerImage}} /></td>
+                    </tr>
+                    <tr class="team-row">
+                        <th class="team-text">{{support.PlayerIGN}}</th>
+                        <td style="border-top: none"><img class="team-player" src={{support.PlayerImage}} /></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
