@@ -106,5 +106,76 @@ namespace LolEsports.DataAccess
                 }
             }
         }
+
+        public DataStructure ChangePassword(int id, String password)
+        {
+            using (var context = new LoLEsportsDbContext())
+            {
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        DataStructure data = new DataStructure();
+                        Account acc = context.Account.Where(i => i.UserId == id).FirstOrDefault();
+                        if(acc == null)
+                        {
+                            data.error = 1;
+                            data.message = "Account does not exist.";
+                            return data;
+                        }
+                        acc.Password = password;
+                        context.Update(acc);
+                        context.SaveChanges();
+                        data.error = 0;
+                        data.message = "Successfully changed password.";
+                        dbContextTransaction.Commit();
+                        return data;
+                    }
+                    catch (Exception e)
+                    {
+                        DataStructure data = new DataStructure();
+                        data.error = 1;
+                        data.message = e.ToString();
+                        dbContextTransaction.Rollback();
+                        return data;
+                    }
+                }
+            }
+        }
+
+        public DataStructure DeleteAccount(int id)
+        {
+            using (var context = new LoLEsportsDbContext())
+            {
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        DataStructure data = new DataStructure();
+                        Account acc = context.Account.Where(i => i.UserId == id).FirstOrDefault();
+                        if(acc == null)
+                        {
+                            data.error = 1;
+                            data.message = "Account does not exist.";
+                            return data;
+                        }
+                        context.Remove(acc);
+                        context.SaveChanges();
+                        data.error = 0;
+                        data.message = "Account successfully deleted.";
+                        dbContextTransaction.Commit();
+                        return data;
+                    }
+                    catch (Exception e)
+                    {
+                        DataStructure data = new DataStructure();
+                        data.error = 1;
+                        data.message = e.ToString();
+                        dbContextTransaction.Rollback();
+                        return data;
+                    }
+                }
+            }
+        }
     }
 }

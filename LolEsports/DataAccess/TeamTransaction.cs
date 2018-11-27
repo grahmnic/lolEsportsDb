@@ -20,14 +20,14 @@ namespace LolEsports.DataAccess
                     {
                         TeamStructure data = new TeamStructure();
                         Coach coach = context.Coach.Where(i => i.CoachId == context.CompetitorTeamRef.Where(x => x.TeamId == TeamId).Select(m => m.CoachId).FirstOrDefault()).FirstOrDefault();
-                        Person coachPerson = context.Person.Where(i => i.PersonId == coach.PersonId).FirstOrDefault();
+                       
                         if (coach == null)
                         {
                             data.error = 1;
                             data.message = "There is no coach available for this team.";
                             return data;
                         }
-
+                        Person coachPerson = context.Person.Where(i => i.PersonId == coach.PersonId).FirstOrDefault();
                         Team team = context.Team.Where(i => i.TeamId == TeamId).FirstOrDefault();
                         data.TeamLogo = team.TeamLogo;
                         data.TeamName = team.TeamName;

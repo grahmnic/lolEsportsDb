@@ -33,4 +33,12 @@ export class DataService {
     getProfile(id) {
         return this.http.get(this.myAppUrl + 'api/GetProfile/' + id);
     }
+
+    changePassword(id, password) {
+        return this.http.put(this.myAppUrl + 'api/changePassword/' + id + '/' + password, null);
+    }
+
+    deleteAccount(id) {
+        return this.http.delete(this.myAppUrl + 'api/deleteAccount/' + id);
+    }
 } 

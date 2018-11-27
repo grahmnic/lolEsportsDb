@@ -38,5 +38,21 @@ namespace LolEsports.Controllers
             var data = transaction.GetProfile(id);
             return data;
         }
+
+        [HttpPut]
+        [Route("/api/changePassword/{id}/{password}")]
+        public DataStructure ChangePassword(int id, String password)
+        {
+            var data = transaction.ChangePassword(id, password);
+            return data;
+        }
+
+        [HttpDelete]
+        [Route("/api/deleteAccount/{id}")]
+        public DataStructure DeleteAccount(int id)
+        {
+            var data = transaction.DeleteAccount(id);
+            return data;
+        }
     }
 }

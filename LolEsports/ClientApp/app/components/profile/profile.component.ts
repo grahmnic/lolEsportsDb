@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit {
     error_message: any;
     userName: any;
     championImage: any;
+    password: any;
 
     constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) {
 
@@ -37,5 +38,42 @@ export class ProfileComponent implements OnInit {
         });
     }
 
+    openPasswordModal() {
+        var ele = <HTMLElement>document.getElementById("change");
+        ele.click();
+    }
 
+    openDeleteModal() {
+        var ele = <HTMLElement>document.getElementById("delete");
+        ele.click();
+    }
+
+    changePassword() {
+        this.dataService.changePassword(this.id, this.password)
+            .subscribe((data) => {
+                var d = data.json();
+                if (d.error == 1) {
+                    this.error = 1;
+                    this.error_message = d.message;
+                } else {
+                    this.error = 0;
+                    this.error_message = d.message;
+                }
+            });
+    }
+
+    deleteAccount() {
+        this.dataService.deleteAccount(this.id)
+            .subscribe((data) => {
+                var d = data.json();
+                if (d.error == 1) {
+                    this.error = 1;
+                    this.error_message = d.message;
+                } else {
+                    this.error = 0;
+                    this.error_message = d.message;
+                    this.router.navigateByUrl('/home');
+                }
+            });
+    }
 }

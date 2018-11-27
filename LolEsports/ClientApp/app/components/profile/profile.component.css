@@ -11,19 +11,76 @@
 
 .text-block {
     position: absolute;
-    color: steelblue;
-    background: rgba(255, 255, 255, 0.99);
-    width:25vw;
-    margin-top: 7.5vh;
-    left: calc(50vw - 12.5vw);
-    border-radius: 25px;
-    border: 2px solid;
-    border-color: darkgoldenrod;
-    padding: 20px;
-    font-size: large;
+    width: 100%;
+    z-index: -1;
+}
+
+.text-img {
+    display: block;
+    position: relative;
+    width: 25vw;
+}
+
+.ribbon {
+    font-size: 30px !important;
+    /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+    width: 40%;
+    max-width: 400px;
+    text-transform: uppercase;
+    position: relative;
+    background: linear-gradient(169deg, rgba(74,59,36,1) 0%, rgba(219,194,123,1) 100%, rgba(70,55,20,1) 100%);
+    color: black;
+    font-family: Oswald;
+    text-align: center;
+    padding: 1em 2em; /* Adjust to suit */
+    margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+
+    .ribbon:before, .ribbon:after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -1em;
+        border: 1.5em solid rgba(70,55,20,1);
+        z-index: -1;
+    }
+
+    .ribbon:before {
+        left: -2em;
+        border-right-width: 1.5em;
+        border-left-color: transparent;
+    }
+
+    .ribbon:after {
+        right: -2em;
+        border-left-width: 1.5em;
+        border-right-color: transparent;
+    }
+
+    .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+        content: "";
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #755a1a transparent transparent transparent;
+        bottom: -1em;
+    }
+
+    .ribbon .ribbon-content:before {
+        left: 0;
+        border-width: 1em 0 0 1em;
+    }
+
+    .ribbon .ribbon-content:after {
+        right: 0;
+        border-width: 1em 1em 0 0;
+    }
+
+.text-name {
+    color: #337ab7;
     text-transform: uppercase;
     text-align: center;
-    font-family: Oswald;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .profile-img {
@@ -43,7 +100,7 @@
     background: rgba(0, 0, 0, 0.0);
     width: 60vw;
     height: 150px;
-    bottom: 0;
+    bottom: 30px;
     position: fixed;
     margin-left: 20vw;
     margin-right: 20vw;
@@ -65,6 +122,7 @@
         background:rgba(0, 0, 0, 0.3) ;
     }
 
+
 .profile-button {
     height: 45px;
     font-size: 20px;
@@ -80,6 +138,7 @@
     margin-right: 4.2vw;
     margin-bottom: 0;
     text-align:center;
+    line-height: 40px;
 }
 
 .profile-button:hover {
@@ -88,3 +147,53 @@
     color: steelblue;
     cursor: pointer;
 }
+
+.signin-modal {
+    height: 150px;
+    max-width: 350px;
+    margin: 0 auto;
+    background: linear-gradient(#1F394B, #0D1417);
+    border-color: #7e744e #b6a671 #55513a #b6a671;
+    color: white;
+    font-family: 'serif';
+    box-shadow: inset 0 0 3px 1px rgba(0,0,0,.3), -1px 1px 10px 0 rgba(0,0,0,.8);
+}
+
+.profile-footer {
+    border-top: none;
+}
+
+.modal-input {
+    background-color: #1e2328;
+    color: #f0e6d2;
+    border: 2px solid #463714;
+    border-radius: 0;
+    padding: 10px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+.profile-btn {
+    height: 30px;
+    font-size: 15px;
+    color: #cdfafa;
+    font-weight: bold;
+    background-color: #1e2328;
+    font-family: 'Spectral';
+    border: solid 1px #3885c7;
+    width: 61%;
+}
+
+    .profile-btn:hover {
+        border: solid 1px #3885c7;
+        background: rgb(2,0,36);
+        background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(30,35,40,1) 39%, rgba(15,93,108,1) 100%);
+    }
+
+    .profile-alert {
+        width: 50%;
+        font-size: 20px;
+        top: 350px;
+        margin: 0 auto;
+    }

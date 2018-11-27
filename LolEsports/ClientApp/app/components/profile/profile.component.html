@@ -1,11 +1,80 @@
 ﻿<img class="background-image" src="https://haste.net/wp-content/uploads/2017/11/Worlds2017Thumbnail.jpg" />
 <img src={{championImage}} class="img-circle profile-img" />
 <div class="text-block">
-    <h1>{{userName}}</h1>
+    <div class="text-wrapper">
+        <h1 class="ribbon">
+            <strong class="ribbon-content">{{userName}}</strong>
+        </h1>
+    </div>
+</div>
+
+
+<div id="exampleModalCenter" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content signin-modal">
+            <div class="modal-header" style="border-bottom-color: #c9aa71">
+                <h5 class="modal-title" style="font-size: 20px">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="font-size: 12px">
+                <p>Are you sure you want to delete your account?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="profile-btn btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" (click)="deleteAccount()" class="profile-btn btn btn-primary" data-dismiss="modal">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="exampleModalCenter2" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content signin-modal">
+            <div class="modal-header" style="border-bottom-color: #c9aa71">
+                <h5 class="modal-title" style="font-size: 20px">Password Change</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="font-size: 12px">
+                <input class="modal-input" [(ngModel)]="password" placeholder="New Password" />
+            </div>
+            <div class="modal-footer profile-footer">
+                <button type="button" (click)="changePassword()" class="btn btn-secondary profile-btn" data-dismiss="modal">Confirm</button>
+                <button type="button" class="btn btn-primary profile-btn" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+<button id="delete" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+</button>
+
+
+<!-- Button trigger modal -->
+<button id="change" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+    Launch demo modal
+</button>
+
+<div *ngIf="error == 1" class="profile-alert alert alert-danger alert-dismissible" role="alert">
+    {{error_message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div *ngIf="error == 0" class="profile-alert alert alert-success alert-dismissible" role="alert">
+    {{error_message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
 <div class="button-block">
-    <a class="profile-button">Change Password</a>
-    <p class="profile-button" style="color: darkred;">Delete Account</p>
+    <a class="profile-button" (click)="openPasswordModal()">Change Password</a>
+    <p class="profile-button" (click)="openDeleteModal()" style="color: darkred;">Delete Account</p>
     <!--
         NEED TO IMPLEMENT TOASTER TO ASK USER TO CHANGE PASSWORD AND DELETE ACCOUNT
     -->
