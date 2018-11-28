@@ -426,6 +426,8 @@ namespace LolEsports.Models
 
                 entity.Property(e => e.StartDate).HasColumnType("date");
 
+                entity.Property(e => e.TournamentBanner).IsUnicode(false);
+
                 entity.Property(e => e.TournamentName)
                     .IsRequired()
                     .HasMaxLength(50)

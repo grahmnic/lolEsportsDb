@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SigninService } from '../shared/signinservice';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'nav-menu',
@@ -13,7 +13,7 @@ export class NavMenuComponent implements OnInit{
     userId: any;
 
 
-    constructor(private signinService: SigninService, private router: Router) {
+    constructor(private signinService: SigninService, private router: Router, private route: ActivatedRoute) {
         router.events.subscribe((val) => {
             this.signedIn = this.signinService.getStatus();
             this.champion = this.signinService.getChampion();
@@ -29,6 +29,6 @@ export class NavMenuComponent implements OnInit{
 
     logout() {
         this.signinService.logout();
-        window.location.reload();
+        this.router.navigate(['/home']);
     }
 }

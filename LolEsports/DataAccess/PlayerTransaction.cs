@@ -65,6 +65,7 @@ namespace LolEsports.DataAccess
                         int TeamId = context.CompetitorTeamRef.Where(i => i.PlayerId == PlayerId).Select(x => x.TeamId).FirstOrDefault();
                         data.TeamName = context.Team.Where(i => i.TeamId == TeamId).Select(x => x.TeamName).FirstOrDefault();
                         data.TeamImage = context.Team.Where(i => i.TeamId == TeamId).Select(x => x.TeamLogo).FirstOrDefault();
+                        data.TeamID = TeamId;
 
                         dbContextTransaction.Commit();
                         return data;

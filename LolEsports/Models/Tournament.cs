@@ -20,6 +20,7 @@ namespace LolEsports.Models
         public int Season { get; set; }
         public int Mvpid { get; set; }
         public int Mvcid { get; set; }
+        public string TournamentBanner { get; set; }
 
         public Coach Mvc { get; set; }
         public Player Mvp { get; set; }

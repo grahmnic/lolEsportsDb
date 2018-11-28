@@ -17,6 +17,7 @@ import { PlayerComponent } from './components/player/player.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TeamComponent } from './components/team/team.component';
+import { MatchComponent } from './components/match/match.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { TeamComponent } from './components/team/team.component';
         AboutComponent,
         PlayerComponent,
         ProfileComponent,
-        TeamComponent
+        TeamComponent,
+        MatchComponent
     ],
     imports: [
         CommonModule,
@@ -44,7 +46,8 @@ import { TeamComponent } from './components/team/team.component';
             { path: 'sign-in', component: SignInComponent },
             { path: 'player/:id', component: PlayerComponent },
             { path: 'profile/:id', component: ProfileComponent },
-            { path: 'team/:id', component: TeamComponent}
+            { path: 'team/:id', component: TeamComponent },
+            { path: 'match/:id', component: MatchComponent }
         ])
     ],
     providers: [

@@ -41,4 +41,19 @@ export class DataService {
     deleteAccount(id) {
         return this.http.delete(this.myAppUrl + 'api/deleteAccount/' + id);
     }
+
+    //Match Transaction
+    getMatch(id) {
+        return this.http.get(this.myAppUrl + 'api/GetMatch/' + id);
+    }
+
+    //Tournament Transaction
+    getTournament(id) {
+        return this.http.get(this.myAppUrl + 'api/GetTournament/' + id);
+    }
+
+    //Champion Transaction
+    getChampion(id) {
+        return this.http.get(this.myAppUrl + 'api/GetChampion/' + id);
+    }
 } 

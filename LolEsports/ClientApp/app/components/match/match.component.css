@@ -1,0 +1,46 @@
+﻿.match-page {
+    background-color: #222;
+    height: 100vh;
+    padding-top: 100px;
+    font-size: 18px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    min-width: 1100px;
+}
+
+.match-img {
+    height: 300px;
+    margin: 0 auto;
+}
+
+tr th:hover {
+    background-position: left bottom;
+}
+
+tr .stat {
+    text-decoration: underline;
+}
+
+tr .stat2 {
+    text-decoration: underline;
+}
+
+th img {
+    width: 25px;
+}
+
+th {
+    padding-left: 0;
+
+}
+
+.match-table {
+    background-color: #222;
+}
+
+.match-header {
+    transform: scale(0.8);
+}
+
+@media (min-width: 768px) {
+
+}

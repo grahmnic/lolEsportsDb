@@ -1,0 +1,69 @@
+﻿<div class="match-page">
+    <div class="match-header">
+        <div class="col-xs-4" style="margin: 0 auto; text-align: center">
+            <img class="match-img" src={{match.winningTeam.teamPicture}} />
+        </div>
+        <div class="col-xs-4" style="margin: 0 auto; background-image: url(https://png2.kisspng.com/20180314/uee/kisspng-white-black-font-pen-and-ink-painting-culture-5aa97d4b4736f7.8534511815210570992917.png); background-repeat: no-repeat; background-size: contain; background-position: -25px center">
+            <h1 style="text-align: center; color: #fcd246; font-family: 'Pathway Gothic One', sans-serif; font-size: 170px; line-height: 270px">VS</h1>
+        </div>
+        <div class="col-xs-4" style="margin: 0 auto; text-align: center">
+            <img class="match-img" src={{match.losingTeam.teamPicture}} />
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <table class="table table-hover table-dark match-table">
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align: center">CHAMPION</th>
+                    <th scope="col">PLAYER</th>
+                    <th scope="col" style="text-align: center"><img src="https://matchhistory.na.leagueoflegends.com/assets/1.0.38/css/resources/images/scoreboardicon_score.png" /></th>
+                    <th scope="col" style="text-align: center"><img src="https://matchhistory.na.leagueoflegends.com/assets/1.0.38/css/resources/images/scoreboardicon_minion.png" /></th>
+                    <th scope="col" style="text-align: center"><img src="https://vignette.wikia.nocookie.net/leagueoflegends/images/d/df/Blue_Turret_icon.png/revision/latest?cb=20171209055034" /></th>
+                    <th scope="col" style="text-align: center"><img src="https://vignette.wikia.nocookie.net/leagueoflegends/images/e/ee/Dragon_icon_%28Blue%29.png/revision/latest?cb=20171111075136" /></th>
+                    <th scope="col" style="text-align: center"><img src="https://vignette.wikia.nocookie.net/leagueoflegends/images/c/c6/Baron_Nashor_icon_%28Blue%29.png/revision/latest?cb=20171111075130" /></th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let player of match.winningTeamStats; let i = index" [attr.data-index]="i">
+                    <tr>
+                        <td style="text-align: center"><img style="width: 50px; border-radius: 50%;" src={{ChampionImages[i]}} /></td>
+                        <th class="stat2" style="font-size: 30px; cursor: pointer" [routerLink]="['/player', player.playerId]">{{PlayerNames[i]}}</th>
+                        <td style="text-align: center">{{player.playerKills}} / {{player.playerDeaths}} / {{player.playerAssists}}</td>
+                        <td style="text-align: center">{{player.playerScore}}</td>
+                        <td style="text-align: center">{{player.towersTaken}}</td>
+                        <td style="text-align: center">{{player.dragonsTaken}}</td>
+                        <td style="text-align: center">{{player.baronsTaken}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-xs-6">
+        <table class="table table-hover table-dark match-table">
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align: center">CHAMPION</th>
+                    <th scope="col">PLAYER</th>
+                    <th scope="col" style="text-align: center"><img src="https://matchhistory.na.leagueoflegends.com/assets/1.0.38/css/resources/images/scoreboardicon_score.png" /></th>
+                    <th scope="col" style="text-align: center"><img src="https://matchhistory.na.leagueoflegends.com/assets/1.0.38/css/resources/images/scoreboardicon_minion.png" /></th>
+                    <th scope="col" style="text-align: center"><img src="https://vignette.wikia.nocookie.net/leagueoflegends/images/2/2c/Red_Turret_icon.png/revision/latest?cb=20171209055033" /></th>
+                    <th scope="col" style="text-align: center"><img src="https://vignette.wikia.nocookie.net/leagueoflegends/images/9/97/Dragon_icon_%28Red%29.png/revision/latest?cb=20171111075137" /></th>
+                    <th scope="col" style="text-align: center"><img src="https://vignette.wikia.nocookie.net/leagueoflegends/images/d/d5/Baron_Nashor_icon_%28Red%29.png/revision/latest?cb=20171111075132" /></th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let player of match.losingTeamStats; let x = index" [attr.data-index]="x">
+                    <tr>
+                        <td style="text-align: center"><img style="width: 50px; border-radius: 50%;" src={{ChampionImages2[x]}} /></td>
+                        <th class="stat" style="font-size: 30px; cursor: pointer" [routerLink]="['/player', player.playerId]">{{PlayerNames2[x]}}</th>
+                        <td style="text-align: center">{{player.playerKills}} / {{player.playerDeaths}} / {{player.playerAssists}}</td>
+                        <td style="text-align: center">{{player.playerScore}}</td>
+                        <td style="text-align: center">{{player.towersTaken}}</td>
+                        <td style="text-align: center">{{player.dragonsTaken}}</td>
+                        <td style="text-align: center">{{player.baronsTaken}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

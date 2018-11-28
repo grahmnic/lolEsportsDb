@@ -10,6 +10,7 @@ namespace LolEsports.DataStructures
         public int error;
         public String message;
 
+        public int TeamID;
         public int PlayerID;
         public String PlayerIGN;
         public String PlayerRole;
