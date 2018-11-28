@@ -52,7 +52,7 @@ export class ProfileComponent implements OnInit {
 
     openAvatarModal() {
         var ele = <HTMLElement>document.getElementById("avatar");
-        ele.click();
+        ele.click(); 
     }
 
     changePassword() {

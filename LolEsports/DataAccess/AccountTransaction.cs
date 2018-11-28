@@ -200,7 +200,7 @@ namespace LolEsports.DataAccess
                         data.error = 0;
                         data.message = "ChampionId successfully changed";
                         dbContextTransaction.Commit();
-                        return data;
+                        return data; 
                     }
                     
                     catch (Exception e)

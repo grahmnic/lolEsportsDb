@@ -58,7 +58,7 @@ export class DataService {
     }
 
     //Change profile Picture Transaction
-    changeProfilePicture(id, championId) {
+    changeProfilePicture(id, championId) { 
         return this.http.put(this.myAppUrl + 'api/ChangeProfilePicture/' + id + '/' + championId, null);
     }
 
