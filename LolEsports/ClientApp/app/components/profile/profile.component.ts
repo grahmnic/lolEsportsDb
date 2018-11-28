@@ -50,6 +50,11 @@ export class ProfileComponent implements OnInit {
         ele.click();
     }
 
+    openAvatarModal() {
+        var ele = <HTMLElement>document.getElementById("avatar");
+        ele.click();
+    }
+
     changePassword() {
         this.dataService.changePassword(this.id, this.password)
             .subscribe((data) => {

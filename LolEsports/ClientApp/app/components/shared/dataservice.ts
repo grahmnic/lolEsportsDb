@@ -56,4 +56,13 @@ export class DataService {
     getChampion(id) {
         return this.http.get(this.myAppUrl + 'api/GetChampion/' + id);
     }
+
+    //Change profile Picture Transaction
+    changeProfilePicture(id, championId) {
+        return this.http.put(this.myAppUrl + 'api/ChangeProfilePicture/' + id + '/' + championId, null);
+    }
+
+    getChampionList() {
+        return this.http.get(this.myAppUrl + 'api/getChampions');
+    }
 } 
