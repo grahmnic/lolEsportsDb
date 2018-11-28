@@ -163,6 +163,16 @@
     box-shadow: inset 0 0 3px 1px rgba(0,0,0,.3), -1px 1px 10px 0 rgba(0,0,0,.8);
 }
 
+.signin-modal-2 {
+    height: auto;
+    margin: 0 auto;
+    background: linear-gradient(#1F394B, #0D1417);
+    border-color: #7e744e #b6a671 #55513a #b6a671;
+    color: white;
+    font-family: 'serif';
+    box-shadow: inset 0 0 3px 1px rgba(0,0,0,.3), -1px 1px 10px 0 rgba(0,0,0,.8);
+}
+
 .profile-footer {
     border-top: none;
 }

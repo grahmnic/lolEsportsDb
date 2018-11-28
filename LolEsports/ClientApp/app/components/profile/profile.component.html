@@ -1,5 +1,5 @@
 ﻿<img class="background-image" src="https://haste.net/wp-content/uploads/2017/11/Worlds2017Thumbnail.jpg" />
-<img src={{championImage}} (click)="openAvatarModal()" class="img-circle profile-img" />
+<img src={{championImage}} (click)="openAvatarModal()" class="img-circle profile-img" data-dismiss="modal"/>
 <div class="text-block">
     <div class="text-wrapper">
         <h1 class="ribbon">
@@ -51,13 +51,13 @@
 
 <div id="changeAvatar" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content signin-modal">
+        <div class="modal-content signin-modal-2">
             <div class="modal-body">
-                <ul>
-                    <li *ngFor="let champion of champions;">
-                        <img (click)="changeProfilePicture(champion.championId)" src={{champion.championImage}} />
-                    </li>
-                </ul>
+                <div class="row" style="position: relative; left: 11px;">
+                    <div class="col-xs-2" style="padding: 0; width: auto" *ngFor="let champion of champions;">
+                        <img (click)="changeProfilePicture(champion.championId)" src={{champion.championImage}} style="width: 50px; margin: 2px"/>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
