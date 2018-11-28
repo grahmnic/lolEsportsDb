@@ -48,6 +48,22 @@
         </div>
     </div>
 </div>
+
+<div id="exampleModalCenter3" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content signin-modal">
+            <div class="modal-body" style="font-size: 12px">
+                <ul>
+                    <li *ngFor="let champion of champions;">
+                        <img (click)="changeProfilePicture(champion.championId)" src={{champion.championImage}} />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Button trigger modal -->
 <button id="delete" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
     Launch demo modal
@@ -56,6 +72,11 @@
 
 <!-- Button trigger modal -->
 <button id="change" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+    Launch demo modal
+</button>
+
+<!-- Button trigger modal -->
+<button id="avatar" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">
     Launch demo modal
 </button>
 
@@ -79,3 +100,4 @@
         NEED TO IMPLEMENT TOASTER TO ASK USER TO CHANGE PASSWORD AND DELETE ACCOUNT
     -->
 </div>
+
