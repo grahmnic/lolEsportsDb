@@ -1,5 +1,5 @@
 ﻿<img class="background-image" src="https://haste.net/wp-content/uploads/2017/11/Worlds2017Thumbnail.jpg" />
-<img src={{championImage}} class="img-circle profile-img" />
+<img src={{championImage}} (click)="changeAvatar" class="img-circle profile-img" />
 <div class="text-block">
     <div class="text-wrapper">
         <h1 class="ribbon">
@@ -9,7 +9,7 @@
 </div>
 
 
-<div id="exampleModalCenter" class="modal" tabindex="-1" role="dialog">
+<div id="confirm" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content signin-modal">
             <div class="modal-header" style="border-bottom-color: #c9aa71">
@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<div id="exampleModalCenter2" class="modal" tabindex="-1" role="dialog">
+<div id="changePassword" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content signin-modal">
             <div class="modal-header" style="border-bottom-color: #c9aa71">
@@ -49,10 +49,10 @@
     </div>
 </div>
 
-<div id="exampleModalCenter3" class="modal" tabindex="-1" role="dialog">
+<div id="changeAvatar" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content signin-modal">
-            <div class="modal-body" style="font-size: 12px">
+            <div class="modal-body">
                 <ul>
                     <li *ngFor="let champion of champions;">
                         <img (click)="changeProfilePicture(champion.championId)" src={{champion.championImage}} />
@@ -65,18 +65,18 @@
 
 
 <!-- Button trigger modal -->
-<button id="delete" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button id="delete" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#confirm">
     Launch demo modal
 </button>
 
 
 <!-- Button trigger modal -->
-<button id="change" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter2">
+<button id="change" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#changePassword">
     Launch demo modal
 </button>
 
 <!-- Button trigger modal -->
-<button id="avatar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter3">
+<button id="avatar" type="button" style="display: none" class="btn btn-primary" data-toggle="modal" data-target="#changeAvatar">
     Launch demo modal
 </button>
 

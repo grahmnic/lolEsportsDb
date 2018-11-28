@@ -94,6 +94,10 @@
     width: 120px;
 }
 
+.profile-img:hover {
+    cursor: pointer;
+}
+
 .button-block {
     position: absolute;
     color: steelblue;
