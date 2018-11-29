@@ -11,5 +11,7 @@ namespace LolEsports.Models
         public string FirstTag { get; set; }
         public string SecondTag { get; set; }
         public string ThirdTag { get; set; }
+        public string Title { get; set; }
+        public string Subtitle { get; set; }
     }
 }

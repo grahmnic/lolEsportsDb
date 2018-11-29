@@ -1,7 +1,53 @@
 <img class="background-image" src="https://cdn.esportsmatrix.com/lol/content/images/uploaded/cms/2018/Feb/128/WORLD.png" />
-<div class="container">
-    <ul>
-
-
-    </ul>
+<div class="container" style="padding-top: 150px; min-width: 768px">
+    <div class="row home-container">
+        <div class="col-xs-4">
+            <ng-container *ngFor="let box of boxes1">
+                <a class="home-box">
+                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 'vh'}">
+                        <img class="home-img" src={{box.thumbnail}} />
+                        <div class="home-body" (click)="navigateTo(box.link)">
+                            <div class="home-text">
+                                <div class="home-title">{{box.title}}</div>
+                                <br />
+                                <div class="home-subtitle">{{box.subtitle}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </ng-container>
+        </div>
+        <div class="col-xs-4">
+            <ng-container *ngFor="let box of boxes2">
+                <a class="home-box">
+                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 'vh'}">
+                        <img class="home-img" src={{box.thumbnail}} />
+                        <div class="home-body" (click)="navigateTo(box.link)">
+                            <div class="home-text">
+                                <div class="home-title">{{box.title}}</div>
+                                <br />
+                                <div class="home-subtitle">{{box.subtitle}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </ng-container>
+        </div>
+        <div class="col-xs-4">
+            <ng-container *ngFor="let box of boxes3">
+                <a class="home-box">
+                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 'vh'}">
+                        <img class="home-img" src={{box.thumbnail}} />
+                        <div class="home-body" (click)="navigateTo(box.link)">
+                            <div class="home-text">
+                                <div class="home-title">{{box.title}}</div>
+                                <br />
+                                <div class="home-subtitle">{{box.subtitle}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </ng-container>
+        </div>
+    </div>
 </div>

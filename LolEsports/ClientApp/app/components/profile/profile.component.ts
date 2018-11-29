@@ -55,6 +55,22 @@ export class ProfileComponent implements OnInit {
         ele.click(); 
     }
 
+    reloadPicture() {
+        this.dataService.getProfile(this.id)
+            .subscribe((data) => {
+                console.log(data);
+                var json = data.json();
+                if (json.error == 0) {
+                    this.userName = json.userName;
+                    this.championImage = json.championImage;
+                    this.getChampionList();
+                } else {
+                    this.error = 1;
+                    this.error_message = json.message;
+                }
+            });
+    }
+
     changePassword() {
         this.dataService.changePassword(this.id, this.password)
             .subscribe((data) => {
@@ -67,6 +83,7 @@ export class ProfileComponent implements OnInit {
                     this.error_message = d.message;
                 }
             });
+    
     }
 
     deleteAccount() {
@@ -101,7 +118,10 @@ export class ProfileComponent implements OnInit {
                 } else {
                     this.error = 0;
                     this.error_message = d.message;
+                    this.reloadPicture();
                 }
             });
+        var ele = <HTMLElement>document.getElementById('closeBtn');
+        ele.click();
     }
 }

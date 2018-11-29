@@ -65,4 +65,9 @@ export class DataService {
     getChampionList() {
         return this.http.get(this.myAppUrl + 'api/getChampions');
     }
+
+    //Home Transaction
+    getMedia() {
+        return this.http.get(this.myAppUrl + 'api/getMedia');
+    }
 } 
