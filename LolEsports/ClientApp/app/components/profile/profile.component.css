@@ -8,7 +8,7 @@
     z-index: -3;
     object-fit: cover;
 }
-
+ 
 .text-block {
     position: absolute;
     width: 100%;
@@ -94,6 +94,10 @@
     width: 120px;
 }
 
+.profile-img:hover {
+    cursor: pointer;
+}
+
 .button-block {
     position: absolute;
     color: steelblue;
@@ -151,6 +155,16 @@
 .signin-modal {
     height: 150px;
     max-width: 350px;
+    margin: 0 auto;
+    background: linear-gradient(#1F394B, #0D1417);
+    border-color: #7e744e #b6a671 #55513a #b6a671;
+    color: white;
+    font-family: 'serif';
+    box-shadow: inset 0 0 3px 1px rgba(0,0,0,.3), -1px 1px 10px 0 rgba(0,0,0,.8);
+}
+
+.signin-modal-2 {
+    height: auto;
     margin: 0 auto;
     background: linear-gradient(#1F394B, #0D1417);
     border-color: #7e744e #b6a671 #55513a #b6a671;

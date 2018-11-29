@@ -177,5 +177,42 @@ namespace LolEsports.DataAccess
                 }
             }
         }
+
+        public DataStructure ChangeProfilePicture(int id, int championId)
+        {
+            using (var context = new LoLEsportsDbContext())
+            {
+                using (var dbContextTransaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        DataStructure data = new DataStructure();
+                        Account acc = context.Account.Where(i => i.UserId == id).FirstOrDefault();
+                        if (acc == null)
+                        {
+                            data.error = 1;
+                            data.message = "Account does not exist.";
+                            return data;
+                        }
+                        acc.ChampionId = championId;
+                        context.Update(acc);
+                        context.SaveChanges();
+                        data.error = 0;
+                        data.message = "ChampionId successfully changed";
+                        dbContextTransaction.Commit();
+                        return data; 
+                    }
+                    
+                    catch (Exception e)
+                    {
+                        DataStructure data = new DataStructure();
+                        data.error = 1;
+                        data.message = e.ToString();
+                        dbContextTransaction.Rollback();
+                        return data;
+                    }
+                }
+            }
+        }
     }
 }

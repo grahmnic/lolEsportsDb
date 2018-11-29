@@ -54,5 +54,21 @@ namespace LolEsports.Controllers
             var data = transaction.DeleteAccount(id);
             return data;
         }
+
+        [HttpPut]
+        [Route("/api/changeProfilePicture/{id}/{championId}")]
+        public DataStructure ChangeProfilePicture(int id, int championId)
+        {
+            var data = transaction.ChangeProfilePicture(id, championId);
+            return data;
+        }
+
+        [HttpGet]
+        [Route("/api/getChampions")]
+        public List<Champion> GetChampions()
+        {
+            LoLEsportsDbContext context = new LoLEsportsDbContext(); 
+            return context.Champion.ToList();
+        }
     }
 }

@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
     userName: any;
     championImage: any;
     password: any;
+    champions: any;
 
     constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) {
 
@@ -29,6 +30,7 @@ export class ProfileComponent implements OnInit {
                     if (json.error == 0) {
                         this.userName = json.userName;
                         this.championImage = json.championImage;
+                        this.getChampionList();
                     } else {
                         this.error = 1;
                         this.error_message = json.message;
@@ -46,6 +48,11 @@ export class ProfileComponent implements OnInit {
     openDeleteModal() {
         var ele = <HTMLElement>document.getElementById("delete");
         ele.click();
+    }
+
+    openAvatarModal() {
+        var ele = <HTMLElement>document.getElementById("avatar");
+        ele.click(); 
     }
 
     changePassword() {
@@ -73,6 +80,27 @@ export class ProfileComponent implements OnInit {
                     this.error = 0;
                     this.error_message = d.message;
                     this.router.navigateByUrl('/home');
+                }
+            });
+    }
+
+    getChampionList() {
+        this.dataService.getChampionList()
+            .subscribe((data) => {
+                this.champions = data.json();
+            });
+    }
+
+    changeProfilePicture(image) {
+        this.dataService.changeProfilePicture(this.id, image)
+            .subscribe((data) => {
+                var d = data.json();
+                if (d.error == 1) {
+                    this.error = 1;
+                    this.error_message = d.message;
+                } else {
+                    this.error = 0;
+                    this.error_message = d.message;
                 }
             });
     }
