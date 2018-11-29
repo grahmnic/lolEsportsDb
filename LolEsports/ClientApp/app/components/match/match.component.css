@@ -1,15 +1,53 @@
 ﻿.match-page {
     background-color: #222;
-    height: 100vh;
+    height: 100%;
     padding-top: 100px;
     font-size: 18px;
     font-family: 'Pathway Gothic One', sans-serif;
     min-width: 1100px;
 }
 
+.match-stats {
+
+}
+
+.match-row {
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    height: 150px;
+    background: rgb(34,34,34);
+    background: linear-gradient(169deg, rgba(34,34,34,1) 0%, rgba(61,61,61,1) 46%, rgba(159,157,157,1) 89%);
+}
+
+.match-tournament {
+    color: white;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.match-border {
+    margin: 0;
+    height: 3px;
+    border: none;
+    width: 100%;
+    background: rgb(100,99,99);
+    background: radial-gradient(circle, rgba(100,99,99,1) 0%, rgba(73,73,73,1) 52%, rgba(159,157,157,1) 89%);
+}
+
+.match-row .text-center {
+    line-height: 150px;
+}
+
 .match-img {
     height: 300px;
     margin: 0 auto;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
 }
 
 tr th:hover {

@@ -32,6 +32,7 @@ namespace LolEsports.DataAccess
                         data.TeamLogo = team.TeamLogo;
                         data.TeamName = team.TeamName;
                         data.TeamPicture = team.TeamPicture;
+                        data.TeamId = TeamId;
 
                         data.CoachName = coachPerson.PersonName;
                         data.CoachIgn = coach.CoachIgn;

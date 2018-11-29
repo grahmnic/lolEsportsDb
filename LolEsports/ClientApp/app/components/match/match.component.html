@@ -1,15 +1,28 @@
 ﻿<div class="match-page">
+    <div class="match-tournament">
+        {{match.tournamentName}}
+    </div>
     <div class="match-header">
         <div class="col-xs-4" style="margin: 0 auto; text-align: center">
-            <img class="match-img" src={{match.winningTeam.teamPicture}} />
+            <img class="match-img" src={{match.winningTeam.teamPicture}} [routerLink]="['/team', match.winningTeam.teamId]"/>
         </div>
         <div class="col-xs-4" style="margin: 0 auto; background-image: url(https://png2.kisspng.com/20180314/uee/kisspng-white-black-font-pen-and-ink-painting-culture-5aa97d4b4736f7.8534511815210570992917.png); background-repeat: no-repeat; background-size: contain; background-position: -25px center">
             <h1 style="text-align: center; color: #fcd246; font-family: 'Pathway Gothic One', sans-serif; font-size: 170px; line-height: 270px">VS</h1>
         </div>
         <div class="col-xs-4" style="margin: 0 auto; text-align: center">
-            <img class="match-img" src={{match.losingTeam.teamPicture}} />
+            <img class="match-img" src={{match.losingTeam.teamPicture}} [routerLink]="['/team', match.losingTeam.teamId]"/>
         </div>
     </div>
+    <div class="match-stats">
+        <div class="row match-row" style="width: 100%">
+            <hr class="match-border" />
+            <div class="col-xs-12 text-center" style="font-size: 35px; color: white; font-family: 'Pathway Gothic One', sans-serif">
+                {{date | date:'MM/dd/yyyy'}}&emsp;{{match.matchLocation}}&emsp;{{hours}}:{{minutes}}:{{seconds}}
+            </div>
+            <hr class="match-border" style="position: relative; top: -3px"/>
+        </div>
+    </div>
+    <br />
     <div class="col-xs-6">
         <table class="table table-hover table-dark match-table">
             <thead>
@@ -35,6 +48,14 @@
                         <td style="text-align: center">{{player.baronsTaken}}</td>
                     </tr>
                 </ng-container>
+                <tr>
+                    <td style="font-size: 20px; text-align: center; line-height: 45px">Champion Bans</td>
+                    <td colspan="6">
+                        <ng-container *ngFor="let ban of match.championBans">
+                            <img style="width: 50px; margin-left: 10px;" src={{ban}} />
+                        </ng-container>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -63,7 +84,16 @@
                         <td style="text-align: center">{{player.baronsTaken}}</td>
                     </tr>
                 </ng-container>
+                <tr>
+                    <td style="font-size: 20px; text-align: center; line-height: 45px">Champion Bans</td>
+                    <td colspan="6">
+                        <ng-container *ngFor="let ban of match.championBans2">
+                            <img style="width: 50px; margin-left: 10px;" src={{ban}} />
+                        </ng-container>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
+    <br />
 </div>
