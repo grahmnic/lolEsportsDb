@@ -13,7 +13,7 @@ export class NavMenuComponent implements OnInit{
     champion: any;
     userId: any;
     teams: any;
-    teamImage: any;
+    tournaments: any;
 
 
     constructor(private dataService: DataService, private signinService: SigninService, private router: Router, private route: ActivatedRoute) {
@@ -29,6 +29,7 @@ export class NavMenuComponent implements OnInit{
         this.champion = this.signinService.getChampion();
         this.userId = this.signinService.getuserId();
         this.getTeamList();
+        this.getTournamentList();
     }
     
 
@@ -36,6 +37,13 @@ export class NavMenuComponent implements OnInit{
         this.dataService.getTeamList()
             .subscribe((data) => {
                 this.teams = data.json();
+            });
+    }
+
+    getTournamentList() {
+        this.dataService.getTournamentList()
+            .subscribe((data) => {
+                this.tournaments = data.json();
             });
     }
     

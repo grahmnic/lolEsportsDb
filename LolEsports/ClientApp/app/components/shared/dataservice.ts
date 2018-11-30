@@ -68,6 +68,10 @@ export class DataService {
 
     getTeamList() {
         return this.http.get(this.myAppUrl + 'api/getTeams');
+}
+
+    getTournamentList() {
+        return this.http.get(this.myAppUrl + 'api/getTournaments');
     }
 
     //Home Transaction
