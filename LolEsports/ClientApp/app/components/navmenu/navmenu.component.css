@@ -23,7 +23,7 @@
 }
 
     .header-buttons:hover {
-        color: #3399ff;
+        color: #3399ff !important;
         text-decoration: none;
     }
 
@@ -33,7 +33,7 @@
     background: rgba(1, 10, 19, 0.6);
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 100;
     border-bottom: 2px solid;
     border-bottom-color: darkgoldenrod;
 }
@@ -69,4 +69,15 @@ input[type=text] {
 
 .navmenu-img:hover {
     opacity: 0.5;
+}
+
+.dropdown-menu {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+    line-height: 40px;
+    margin-right: 15px;
+}
+
+.dropdown-item:hover {
+    background-color: #222 !important;
 }

@@ -70,5 +70,13 @@ namespace LolEsports.Controllers
             LoLEsportsDbContext context = new LoLEsportsDbContext(); 
             return context.Champion.ToList();
         }
+
+        [HttpGet]
+        [Route("/api/getTeams")]
+        public List<Team> GetTeams()
+        {
+            LoLEsportsDbContext context = new LoLEsportsDbContext();
+            return context.Team.ToList();
+        }
     }
 }

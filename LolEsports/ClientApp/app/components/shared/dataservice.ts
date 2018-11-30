@@ -66,6 +66,10 @@ export class DataService {
         return this.http.get(this.myAppUrl + 'api/getChampions');
     }
 
+    getTeamList() {
+        return this.http.get(this.myAppUrl + 'api/getTeams');
+    }
+
     //Home Transaction
     getMedia() {
         return this.http.get(this.myAppUrl + 'api/getMedia');

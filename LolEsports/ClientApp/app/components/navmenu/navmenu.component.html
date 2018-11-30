@@ -9,6 +9,22 @@
 
         <a class="button header-buttons" style="float:left;" [routerLink]="['/about']">About</a>
 
+        <div class="dropdown">
+            <a class="button header-buttons" style="float: left; color:goldenrod" data-toggle="dropdown" id="dropdownTeamButton" aria-expanded="false" aria-haspopup="true" role="button">Teams</a>
+            <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdownTeamButton" style="top: 72px; left:300px">
+                <ul style="list-style-type: none; padding: 0; margin: 0;">
+                    <li *ngFor="let team of teams">
+                        <a class="dropdown-item" [routerLink]="['/team',team.teamId]" style="color: white; float: left;">{{team.teamName}}
+                        <img src="{{team.teamPicture}}" style="width: 40px; float: right; margin-left: 10px"/>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+   
+        <a class="button header-buttons" style="float:left;" [routerLink]="['/tournament']">Tournaments</a>
+
         <a *ngIf="!signedIn" class="button header-buttons" style="float:right;" [routerLink]="['/sign-in']">Sign In</a>
         <div *ngIf="signedIn">
             <a class="button header-buttons navmenu-logout" style="float:right; color: goldenrod; cursor: pointer" (click)="logout()">Logout</a>
