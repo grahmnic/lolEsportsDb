@@ -44,6 +44,7 @@ namespace LolEsports.DataAccess
                             StandingsStructure s = new StandingsStructure();
                             s.TeamName = team.TeamName;
                             s.TeamLogo = team.TeamPicture;
+                            s.TeamId = team.TeamId;
                             tourney.Standings.Add(s);
                         });
                         context.Match.Where(i => (!i.IsFinals).GetValueOrDefault() && (!i.IsQuarters).GetValueOrDefault() && (!i.IsSemis).GetValueOrDefault() && i.TournamentId == t.TournamentId).OrderBy(o => o.DatePlayed)

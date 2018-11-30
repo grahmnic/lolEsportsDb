@@ -16,8 +16,10 @@
     <div class="match-stats">
         <div class="row match-row" style="width: 100%">
             <hr class="match-border" />
-            <div class="col-xs-12 text-center" style="font-size: 35px; color: white; font-family: 'Pathway Gothic One', sans-serif">
+            <div class="col-xs-12 text-center" style="font-size: 35px; color: white; font-family: 'Pathway Gothic One', sans-serif; line-height: 90px">
                 {{date | date:'MM/dd/yyyy'}}&emsp;{{match.matchLocation}}&emsp;{{hours}}:{{minutes}}:{{seconds}}
+                <br />
+                <span style="position: relative; top: -30px">WINNER: {{winner}}</span>
             </div>
             <hr class="match-border" style="position: relative; top: -3px"/>
         </div>

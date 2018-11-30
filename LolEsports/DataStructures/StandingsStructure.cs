@@ -9,6 +9,7 @@ namespace LolEsports.DataStructures
     {
         public String TeamName;
         public String TeamLogo;
+        public int TeamId;
         public int Wins;
         public int Losses;
     }

@@ -25,42 +25,42 @@
         <div class="semifinals">
             <div class="col-xs-4" style="border-right: 1px solid white">
                 <h1>Quarterfinals</h1>
-                <div class="box1 loser">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[0].losingTeam.teamId]" class="box1 loser">
                     <img class="box-img" src={{t.playsoffs[0].losingTeam.teamPicture}} />{{t.playsoffs[0]?.losingTeam.teamName}}
                 </div>
-                <div class="box1 winner">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[0].winningTeam.teamId]" class="box1 winner">
                     <img class="box-img" src={{t.playsoffs[0].winningTeam.teamPicture}} />{{t.playsoffs[0].winningTeam.teamName}}
                 </div>
                 <br />
-                <div class="box1 winner">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[1].winningTeam.teamId]" class="box1 winner">
                     <img class="box-img" src={{t.playsoffs[1].winningTeam.teamPicture}} />{{t.playsoffs[1].winningTeam.teamName}}
                 </div>
-                <div class="box1 loser">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[1].losingTeam.teamId]" class="box1 loser">
                     <img class="box-img" src={{t.playsoffs[1].losingTeam.teamPicture}} />{{t.playsoffs[1].losingTeam.teamName}}
                 </div>
             </div>
             <div class="col-xs-4" style="border-right: 1px solid white">
                 <h1>Semifinals</h1>
-                <div class="box1 loser">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[2].losingTeam.teamId]" class="box1 loser">
                     <img class="box-img" src={{t.playsoffs[2].losingTeam.teamPicture}} />{{t.playsoffs[2]?.losingTeam.teamName}}
                 </div>
-                <div class="box1 winner">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[2].winningTeam.teamId]" class="box1 winner">
                     <img class="box-img" src={{t.playsoffs[2].winningTeam.teamPicture}} />{{t.playsoffs[2].winningTeam.teamName}}
                 </div>
                 <br />
-                <div class="box1 loser">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[3].losingTeam.teamId]" class="box1 loser">
                     <img class="box-img" src={{t.playsoffs[3].losingTeam.teamPicture}} />{{t.playsoffs[3].losingTeam.teamName}}
                 </div>
-                <div class="box1 winner">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[3].winningTeam.teamId]" class="box1 winner">
                     <img class="box-img" src={{t.playsoffs[3].winningTeam.teamPicture}} />{{t.playsoffs[3].winningTeam.teamName}}
                 </div>
             </div>
             <div class="col-xs-4">
                 <h1>Finals</h1>
-                <div class="box1 finals">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[4].winningTeam.teamId]" class="box1 finals">
                     <img class="box-img" src={{t.playsoffs[4].winningTeam.teamPicture}} />{{t.playsoffs[4]?.winningTeam.teamName}}
                 </div>
-                <div class="box1 loser">
+                <div style="cursor: pointer" [routerLink]="['/team', t.playsoffs[4].losingTeam.teamId]" class="box1 loser">
                     <img class="box-img" src={{t.playsoffs[4].losingTeam.teamPicture}} />{{t.playsoffs[4].losingTeam.teamName}}
                 </div>
             </div>
@@ -70,7 +70,7 @@
         <table class="tournament-table table table-hover table-dark">
             <tbody>
                 <ng-container *ngFor="let team of t.standings; let i = index">
-                    <tr>
+                    <tr style="cursor:pointer" [routerLink]="['/team', team.teamId]">
                         <th class="team-place" scope="row">{{i+1}}</th>
                         <td style="font-size: 40px; font-family: Oswald; line-height: 90px" [routerLink]="['/team', team.teamId]"><img class="team-img" src={{team.teamLogo}} />{{team.teamName}}</td>
                         <td class="team-score">{{team.wins}} - {{team.losses}}</td>
@@ -80,6 +80,17 @@
         </table>
     </div>
     <div class="tournament-matches">
-
+        <h1 style="font-size: 50px; color: white; font-family: Oswald; text-align: center; text-transform: uppercase">Match Schedule</h1>
+        <table class="tournament-table table table-hover table-dark">
+            <tbody>
+                <ng-container *ngFor="let match of t.matches; let x = index">
+                    <tr class="match-text" style="cursor: pointer" [routerLink]="['/match', match.matchId]">
+                        <td *ngIf="random_arr[x]" class="match-vs"><img class="schedule-img" src={{match.losingTeam.teamPicture}}/>{{match.losingTeam.teamName}}<span class="vs-text">VS</span> <img class="schedule-img" src={{match.winningTeam.teamPicture}}/>{{match.winningTeam.teamName}}</td>
+                        <td *ngIf="!random_arr[x]" class="match-vs"><img class="schedule-img" src={{match.winningTeam.teamPicture}} />{{match.winningTeam.teamName}}<span class="vs-text">VS</span> <img class="schedule-img" src={{match.losingTeam.teamPicture}} />{{match.losingTeam.teamName}}</td>
+                        <td class="match-date">{{match.datePlayed}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
     </div>
 </div>

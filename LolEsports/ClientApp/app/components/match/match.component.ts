@@ -19,10 +19,11 @@ export class MatchComponent implements OnInit {
     ChampionImages2: any = [];
     PlayerNames2: any = [];
     ChampionBans2: any = [];
-    hours: any;
-    minutes: any;
-    seconds: any;
-    date: any;
+    hours: any = {};
+    minutes: any = {};
+    seconds: any = {};
+    date: any = {};
+    winner: any = {};
 
     constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) {
 
@@ -54,6 +55,7 @@ export class MatchComponent implements OnInit {
                         this.minutes = this.minutes.toString().length == 1 ? '0' + this.minutes.toString() : this.minutes;
                         this.seconds = this.seconds.toString().length == 1 ? '0' + this.seconds.toString() : this.seconds;
                         this.hours = this.hours.toString().length == 1 ? '0' + this.hours.toString() : this.hours;
+                        this.winner = d.winningTeam.teamName;
                     }
                 });
         });

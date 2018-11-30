@@ -14,9 +14,23 @@ export class TournamentComponent implements OnInit {
     error_message: any;
     t: any = {};
     gif: any;
+    random_arr: any = [];
 
     constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) {
 
+    }
+
+    random() {
+        var arr: boolean[] = new Array(this.t.matches.length);
+        var counter = this.t.matches.length;
+        for (var i = 0; i < counter; i++) {
+            if (Math.random() > 0.5) {
+                arr[i] = true;
+            } else {
+                arr[i] = false;
+            }
+        }
+        this.random_arr = arr;
     }
 
     ngOnInit() {
@@ -30,6 +44,7 @@ export class TournamentComponent implements OnInit {
                         this.error = 0;
                         this.error_message = d.message;
                         this.t = d;
+                        this.random();
                     } else {
                         this.error = 1;
                         this.error_message = d.message;
