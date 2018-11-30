@@ -2,9 +2,9 @@
 <div class="container" style="padding-top: 150px; min-width: 768px">
     <div class="row home-container">
         <div class="col-xs-4">
-            <ng-container *ngFor="let box of boxes1">
+            <ng-container *ngFor="let box of boxes1; let i = index">
                 <a class="home-box">
-                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 0 + 'vh'}">
+                    <div class="home-content" [ngStyle]="{ 'height': random_heights1[i] + 'vh'}">
                         <img class="home-img" src={{box.thumbnail}} />
                         <div class="home-body" (click)="navigateTo(box.link)">
                             <div class="home-text">
@@ -18,9 +18,9 @@
             </ng-container>
         </div>
         <div class="col-xs-4">
-            <ng-container *ngFor="let box of boxes2">
+            <ng-container *ngFor="let box of boxes2; let x = index">
                 <a class="home-box">
-                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 0 + 'vh'}">
+                    <div class="home-content" [ngStyle]="{ 'height': random_heights2[x] + 'vh'}">
                         <img class="home-img" src={{box.thumbnail}} />
                         <div class="home-body" (click)="navigateTo(box.link)">
                             <div class="home-text">
@@ -34,9 +34,9 @@
             </ng-container>
         </div>
         <div class="col-xs-4">
-            <ng-container *ngFor="let box of boxes3">
+            <ng-container *ngFor="let box of boxes3; let f = index">
                 <a class="home-box">
-                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 0 + 'vh'}">
+                    <div class="home-content" [ngStyle]="{ 'height': random_heights3[f] + 'vh'}">
                         <img class="home-img" src={{box.thumbnail}} />
                         <div class="home-body" (click)="navigateTo(box.link)">
                             <div class="home-text">

@@ -102,8 +102,20 @@
     margin-bottom: 5px;
 }
 
+.standings-title {
+    font-size: 50px;
+    font-family: Oswald;
+    text-align: center;
+}
+
 .tournament-matches {
     margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.win {
+    background: rgb(206,189,132);
+    background: linear-gradient(169deg, rgba(206,189,132,1) 0%, rgba(177,147,87,1) 41%, rgba(123,95,48,1) 89%);
 }
 
 h1 {

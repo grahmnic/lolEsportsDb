@@ -67,6 +67,7 @@
         </div>
     </div>
     <div class="tournament-standings">
+        <h1 style="text-transform: uppercase" class="standings-title">Standings</h1>
         <table class="tournament-table table table-hover table-dark">
             <tbody>
                 <ng-container *ngFor="let team of t.standings; let i = index">
@@ -85,8 +86,12 @@
             <tbody>
                 <ng-container *ngFor="let match of t.matches; let x = index">
                     <tr class="match-text" style="cursor: pointer" [routerLink]="['/match', match.matchId]">
-                        <td *ngIf="random_arr[x]" class="match-vs"><img class="schedule-img" src={{match.losingTeam.teamPicture}}/>{{match.losingTeam.teamName}}<span class="vs-text">VS</span> <img class="schedule-img" src={{match.winningTeam.teamPicture}}/>{{match.winningTeam.teamName}}</td>
-                        <td *ngIf="!random_arr[x]" class="match-vs"><img class="schedule-img" src={{match.winningTeam.teamPicture}} />{{match.winningTeam.teamName}}<span class="vs-text">VS</span> <img class="schedule-img" src={{match.losingTeam.teamPicture}} />{{match.losingTeam.teamName}}</td>
+                        <td *ngIf="random_arr[x]" class="match-vs"><img class="schedule-img" src={{match.losingTeam.teamPicture}} />{{match.losingTeam.teamName}}</td>
+                        <td *ngIf="random_arr[x]"><span class="vs-text">VS</span></td>
+                        <td *ngIf="random_arr[x]" class="match-vs win"><img class="schedule-img" src={{match.winningTeam.teamPicture}} />{{match.winningTeam.teamName}}</td>
+                        <td *ngIf="!random_arr[x]" class="match-vs win"><img class="schedule-img" src={{match.winningTeam.teamPicture}} />{{match.winningTeam.teamName}}
+                        <td *ngIf="!random_arr[x]"><span class="vs-text">VS</span></td>
+                        <td *ngIf="!random_arr[x]" class="match-vs"><img class="schedule-img" src={{match.losingTeam.teamPicture}} />{{match.losingTeam.teamName}}</td>
                         <td class="match-date">{{match.datePlayed}}</td>
                     </tr>
                 </ng-container>
