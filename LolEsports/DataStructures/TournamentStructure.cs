@@ -19,7 +19,8 @@ namespace LolEsports.DataStructures
         public String MVCName;
         public String MVCIgn;
         public String TournamentBanner;
-        public List<MatchStructure> Matches;
-        public List<MatchStructure> Playsoffs;
+        public List<SimpleMatchStructure> Matches;
+        public List<SimpleMatchStructure> Playsoffs;
+        public List<StandingsStructure> Standings;
     }
 }

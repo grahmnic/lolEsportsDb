@@ -35,17 +35,42 @@ namespace LolEsports.DataAccess
                         tourney.MVCName = context.Person.Where(i => i.PersonId == c.PersonId).Select(x => x.PersonName).FirstOrDefault();
                         tourney.MVCIgn = c.CoachIgn;
                         MatchTransaction mt = new MatchTransaction();
+                        TeamTransaction tt = new TeamTransaction();
                         tourney.TournamentBanner = t.TournamentBanner;
-                        context.Match.Where(i => (!i.IsFinals).GetValueOrDefault() && (!i.IsQuarters).GetValueOrDefault() && (!i.IsSemis).GetValueOrDefault() && i.TournamentId == t.TournamentId).OrderBy(o => o.DatePlayed).Select(x => x.MatchId)
+                        tourney.Matches = new List<SimpleMatchStructure>();
+                        tourney.Standings = new List<StandingsStructure>();
+                        context.Team.ToList().ForEach((team) =>
+                        {
+                            StandingsStructure s = new StandingsStructure();
+                            s.TeamName = team.TeamName;
+                            s.TeamLogo = team.TeamPicture;
+                            tourney.Standings.Add(s);
+                        });
+                        context.Match.Where(i => (!i.IsFinals).GetValueOrDefault() && (!i.IsQuarters).GetValueOrDefault() && (!i.IsSemis).GetValueOrDefault() && i.TournamentId == t.TournamentId).OrderBy(o => o.DatePlayed)
                             .ToList().ForEach((match) =>
                             {
-                                tourney.Matches.Add(mt.GetMatch(match));
+                                SimpleMatchStructure sms = new SimpleMatchStructure();
+                                sms.MatchId = match.MatchId;
+                                sms.DatePlayed = match.DatePlayed;
+                                sms.WinningTeam = tt.GetTeam(match.WinningTeamId);
+                                sms.LosingTeam = tt.GetTeam(match.LosingTeamId);
+                                tourney.Matches.Add(sms);
+                                tourney.Standings.Find(l => l.TeamName == sms.WinningTeam.TeamName).Wins++;
+                                tourney.Standings.Find(l => l.TeamName == sms.LosingTeam.TeamName).Losses++;
                             });
-                        context.Match.Where(i => (i.IsFinals).GetValueOrDefault() && (i.IsQuarters).GetValueOrDefault() && (i.IsSemis).GetValueOrDefault() && i.TournamentId == t.TournamentId).OrderBy(o => o.DatePlayed).Select(x => x.MatchId)
+                        tourney.Playsoffs = new List<SimpleMatchStructure>();
+                        context.Match.Where(i => ((i.IsFinals).GetValueOrDefault() == true || (i.IsQuarters).GetValueOrDefault() == true || (i.IsSemis).GetValueOrDefault() == true) && i.TournamentId == t.TournamentId).OrderBy(o => o.DatePlayed)
                             .ToList().ForEach((match) =>
                             {
-                                tourney.Playsoffs.Add(mt.GetMatch(match));
+                                SimpleMatchStructure sms = new SimpleMatchStructure();
+                                sms.MatchId = match.MatchId;
+                                sms.DatePlayed = match.DatePlayed;
+                                sms.WinningTeam = tt.GetTeam(match.WinningTeamId);
+                                sms.LosingTeam = tt.GetTeam(match.LosingTeamId);
+                                tourney.Playsoffs.Add(sms);
                             });
+                        tourney.Standings = tourney.Standings.OrderByDescending(o => o.Wins).ThenBy(x => x.Losses).ToList();
+
 
                         dbContextTransaction.Commit();
                         return tourney;

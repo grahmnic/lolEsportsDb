@@ -1,86 +1,85 @@
-﻿<div class="player-page">
-    <div class="player-header" [ngStyle]="{ 'background-image': 'url(' + player.TeamImage + ')'}">
-        <div class="player-name">
-            {{player.PlayerIGN}}
-        </div>
-        <div class="player-real-name">
-            {{player.PersonName}}
-        </div>
-        <img class="player-image" src={{player.PlayerImage}} />
-        <button type="button" class="btn btn-default team-btn" [routerLink]="['/team', teamid]">VIEW TEAM</button>
-        <button type="button" class="btn btn-default player-btn">&nbsp;&nbsp;&nbsp;FOLLOW PLAYER&nbsp;&nbsp;</button>
-    </div>
-    <div class="row player-stats">
-        <div class="col-md-3">
-            <div class="jumbotron jumbotron-fluid player-jumbotron">
-                <div class="container">
-                    <h1 class="display-4 player-title">KDA</h1>
-                    <p class="lead player-text">{{(player.TotalKills+player.TotalAssists) / player.TotalDeaths}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="jumbotron jumbotron-fluid player-jumbotron">
-                <div class="container">
-                    <h1 class="display-4 player-title">Total Kills</h1>
-                    <p class="lead player-text">{{player.TotalKills}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="jumbotron jumbotron-fluid player-jumbotron">
-                <div class="container">
-                    <h1 class="display-4 player-title">Total Assists</h1>
-                    <p class="lead player-text">{{player.TotalAssists}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="jumbotron jumbotron-fluid player-jumbotron">
-                <div class="container">
-                    <h1 class="display-4 player-title">Total Score</h1>
-                    <p class="lead player-text">{{player.TotalScore}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row player-stats">
-        <div class="col-md-4">
-            <div class="jumbotron jumbotron-fluid player-jumbotron">
-                <div class="container">
-                    <h1 class="display-4 player-title" style="text-align: center">Salary</h1>
-                    <br />
-                    <p class="lead player-text" style="text-align: center">{{player.Salary | currency:'USD':true}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="jumbotron jumbotron-fluid player-jumbotron">
-                <div class="container">
-                    <img class="player-info-img" src={{role}} />
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="jumbotron jumbotron-fluid player-jumbotron">
-                <div class="container">
-                    <h1 class="display-4 player-title" style="text-align: center">Hometown</h1>
-                    <br />
-                    <p class="lead player-text" style="text-align: center">{{player.Hometown}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row player-bio">
-        <div class="col-md-12">
-            <h1 class="display-4 player-title badge badge-secondary" style="text-decoration: underline;font-size: 35px; font-family: Oswald;">Biography</h1>
+﻿<div class="tournament-page">
+    <div class="tournament-header">
+        <div class="tournament-title">
+            {{t.tournamentName}}
             <br />
-            <p class="lead player-bio-text">
-                {{player.Biography}}
-            </p>
-            <blockquote class="blockquote lead player-quote">
-                <span style="font-size: 40px">"</span> {{player.Quote}} <span style="font-size: 40px">"</span>
-            </blockquote>
+            <span class="tournament-subtitle">Season {{t.season}}</span>
         </div>
+        <div class="row">
+            <div class="col-xs-4">
+
+            </div>
+            <div class="col-xs-4">
+                <img class="tournament-img-2" src="https://vignette.wikia.nocookie.net/leagueoflegends/images/6/69/Clash_Level_5_Flag_Frame.png/revision/latest/scale-to-width-down/640?cb=20180506134831" />
+                <img class="tournament-img" src={{t.tournamentBanner}} />
+            </div>
+            <div class="col-xs-4 tournament-bg">
+                <img *ngIf="gif == 0" class="tournament-gif" src="../../../assets/gif1.gif" />
+                <img *ngIf="gif == 1" class="tournament-gif" src="../../../assets/gif2.gif" />
+                <img *ngIf="gif == 2" class="tournament-gif" src="../../../assets/gif3.gif" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="tournament-bracket">
+        <div class="semifinals">
+            <div class="col-xs-4" style="border-right: 1px solid white">
+                <h1>Quarterfinals</h1>
+                <div class="box1 loser">
+                    <img class="box-img" src={{t.playsoffs[0].losingTeam.teamPicture}} />{{t.playsoffs[0]?.losingTeam.teamName}}
+                </div>
+                <div class="box1 winner">
+                    <img class="box-img" src={{t.playsoffs[0].winningTeam.teamPicture}} />{{t.playsoffs[0].winningTeam.teamName}}
+                </div>
+                <br />
+                <div class="box1 winner">
+                    <img class="box-img" src={{t.playsoffs[1].winningTeam.teamPicture}} />{{t.playsoffs[1].winningTeam.teamName}}
+                </div>
+                <div class="box1 loser">
+                    <img class="box-img" src={{t.playsoffs[1].losingTeam.teamPicture}} />{{t.playsoffs[1].losingTeam.teamName}}
+                </div>
+            </div>
+            <div class="col-xs-4" style="border-right: 1px solid white">
+                <h1>Semifinals</h1>
+                <div class="box1 loser">
+                    <img class="box-img" src={{t.playsoffs[2].losingTeam.teamPicture}} />{{t.playsoffs[2]?.losingTeam.teamName}}
+                </div>
+                <div class="box1 winner">
+                    <img class="box-img" src={{t.playsoffs[2].winningTeam.teamPicture}} />{{t.playsoffs[2].winningTeam.teamName}}
+                </div>
+                <br />
+                <div class="box1 loser">
+                    <img class="box-img" src={{t.playsoffs[3].losingTeam.teamPicture}} />{{t.playsoffs[3].losingTeam.teamName}}
+                </div>
+                <div class="box1 winner">
+                    <img class="box-img" src={{t.playsoffs[3].winningTeam.teamPicture}} />{{t.playsoffs[3].winningTeam.teamName}}
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <h1>Finals</h1>
+                <div class="box1 finals">
+                    <img class="box-img" src={{t.playsoffs[4].winningTeam.teamPicture}} />{{t.playsoffs[4]?.winningTeam.teamName}}
+                </div>
+                <div class="box1 loser">
+                    <img class="box-img" src={{t.playsoffs[4].losingTeam.teamPicture}} />{{t.playsoffs[4].losingTeam.teamName}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tournament-standings">
+        <table class="tournament-table table table-hover table-dark">
+            <tbody>
+                <ng-container *ngFor="let team of t.standings; let i = index">
+                    <tr>
+                        <th class="team-place" scope="row">{{i+1}}</th>
+                        <td style="font-size: 40px; font-family: Oswald; line-height: 90px" [routerLink]="['/team', team.teamId]"><img class="team-img" src={{team.teamLogo}} />{{team.teamName}}</td>
+                        <td class="team-score">{{team.wins}} - {{team.losses}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+    <div class="tournament-matches">
+
     </div>
 </div>

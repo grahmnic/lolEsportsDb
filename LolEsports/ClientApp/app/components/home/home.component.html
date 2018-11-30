@@ -4,7 +4,7 @@
         <div class="col-xs-4">
             <ng-container *ngFor="let box of boxes1">
                 <a class="home-box">
-                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 'vh'}">
+                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 0 + 'vh'}">
                         <img class="home-img" src={{box.thumbnail}} />
                         <div class="home-body" (click)="navigateTo(box.link)">
                             <div class="home-text">
@@ -20,7 +20,7 @@
         <div class="col-xs-4">
             <ng-container *ngFor="let box of boxes2">
                 <a class="home-box">
-                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 'vh'}">
+                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 0 + 'vh'}">
                         <img class="home-img" src={{box.thumbnail}} />
                         <div class="home-body" (click)="navigateTo(box.link)">
                             <div class="home-text">
@@ -36,7 +36,7 @@
         <div class="col-xs-4">
             <ng-container *ngFor="let box of boxes3">
                 <a class="home-box">
-                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 'vh'}">
+                    <div class="home-content" [ngStyle]="{ 'height': randomHeight() + 0 + 'vh'}">
                         <img class="home-img" src={{box.thumbnail}} />
                         <div class="home-body" (click)="navigateTo(box.link)">
                             <div class="home-text">
