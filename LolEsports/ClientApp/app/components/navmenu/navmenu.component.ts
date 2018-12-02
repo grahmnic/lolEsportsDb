@@ -22,6 +22,7 @@ export class NavMenuComponent implements OnInit{
             this.champion = this.signinService.getChampion();
             this.userId = this.signinService.getuserId();
         });
+        
     }
 
     ngOnInit() {

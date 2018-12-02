@@ -18,6 +18,10 @@ export class SigninService {
         return this.champion;
     }
 
+    setChampion(champion) {
+        this.champion = champion;
+    }
+
     getuserId() {
         return this.userid;
     }

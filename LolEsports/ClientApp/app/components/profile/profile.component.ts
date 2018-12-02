@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../shared/dataservice';
+import { SigninService } from '../shared/signinservice';
 
 @Component({
     selector: 'profile',
@@ -16,7 +17,7 @@ export class ProfileComponent implements OnInit {
     password: any;
     champions: any;
 
-    constructor(private dataService: DataService, private router: Router, private route: ActivatedRoute) {
+    constructor(private dataService: DataService, private signInService: SigninService, private router: Router, private route: ActivatedRoute) {
 
     }
 
@@ -63,7 +64,9 @@ export class ProfileComponent implements OnInit {
                 if (json.error == 0) {
                     this.userName = json.userName;
                     this.championImage = json.championImage;
+                    this.signInService.setChampion(this.championImage);
                     this.getChampionList();
+                    this.router.navigate(['/profile'], this.id);
                 } else {
                     this.error = 1;
                     this.error_message = json.message;
