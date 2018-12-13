@@ -39,7 +39,7 @@ namespace LolEsports.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=lolesports.cwkpfiwou75m.us-east-2.rds.amazonaws.com;Database=LoLEsportsDb;User Id=admin;Password=cse305sucks");
+                optionsBuilder.UseSqlServer("Server=lolesports.cwkpfiwou75m.us-east-2.rds.amazonaws.com;Database=LoLEsportsDb;User Id=admin;Password=cse305isfun");
             }
         }
 

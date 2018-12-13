@@ -99,6 +99,7 @@ export class ProfileComponent implements OnInit {
                 } else {
                     this.error = 0;
                     this.error_message = d.message;
+                    this.signInService.logout();
                     this.router.navigateByUrl('/home');
                 }
             });

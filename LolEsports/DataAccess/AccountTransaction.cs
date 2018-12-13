@@ -60,6 +60,7 @@ namespace LolEsports.DataAccess
                             return data;
                         }
                         account.LevelAccess = 3;
+                        account.ChampionId = 1;
                         context.Add(account);
                         context.SaveChanges();
                         dbContextTransaction.Commit();
