@@ -1,4 +1,4 @@
-Unfortunately a while back I had to take down the deployment on Azure, however I did find some photos from the presentation my team had to do a while back.
+**Unfortunately a while back I had to take down the deployment on Azure, however I did find some photos from the presentation my team had to do a while back.**
 
 ## Database Structure:  
 > We used MSSQL and SSDT to manage our database.  
