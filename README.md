@@ -26,4 +26,4 @@ Unfortunately a while back I had to take down the deployment on Azure, however I
 
 ## Tournmanent:  
 > You could view tournmanets which were part of regions. If you scrolled down you could view the records of each team competing in that tournmanent and even view match history of individual games. Again .pngs not found, but the code's there!  
-![tournament](./sample/tournament)
+![tournament](./sample/tournament.png)
